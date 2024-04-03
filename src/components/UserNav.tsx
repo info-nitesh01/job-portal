@@ -1,19 +1,18 @@
 
 "use client";
 
-import { PlusCircleIcon, PlusIcon, UserIcon } from "@heroicons/react/16/solid";
-import { Button, Navbar } from "flowbite-react";
+import { PlusCircleIcon, UserIcon } from "@heroicons/react/16/solid";
+import { Navbar } from "flowbite-react";
 
 export default function UserNav() {
     return (
-        <Navbar fluid rounded className="mx-24 my-2">
+        <Navbar fluid rounded className="mx-5 md:mx-24 my-2">
             <Navbar.Brand href="/">
                 <img src="https://templates.hibootstrap.com/gable/default/assets/img/logo.png" className="mr-3 h-12" alt="Flowbite React Logo" />
             </Navbar.Brand>
             <div className="flex md:order-2">
-                {/* <button className="common-btn">Get started</button> */}
-                <button className="common-btn mr-2" role="button"><span className="text flex items-center"><PlusCircleIcon className="h-4 rounded-sm me-2" />Login</span></button>
-                <button className="common-btn-2" role="button"><span className="text flex items-center"><UserIcon className="h-4 rounded-sm me-2" />Sign Up</span></button>
+                <button className="common-btn px-7 py-3" role="button"><span className="text flex items-center"><PlusCircleIcon className="h-4 rounded-sm me-2" />Login</span></button>
+                <button className="common-btn-2 mx-2 px-7 py-3" role="button"><span className="text flex items-center"><UserIcon className="h-4 rounded-sm me-2" />Sign Up</span></button>
                 <Navbar.Toggle />
             </div>
             <Navbar.Collapse>
