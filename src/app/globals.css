@@ -143,13 +143,31 @@
   color: #3eb34c !important;
 }
 
+/* NAVBAR */
+.nav:hover {
+  color: #3eb34c;
+}
+
+.nav.active {
+  color: #3eb34c;
+  font-weight: 500;
+}
+
 /* HOME BANNER */
 .find-job-banner {
-  background-image: url('https://templates.hibootstrap.com/gable/default/assets/img/home-1/banner.jpg');
+  position: relative;
   height: 90vh;
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
+}
+
+#background-video {
+  width: 100vw;
+  height: 90vh;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   z-index: -2;
 }
 
@@ -157,8 +175,20 @@
   background: linear-gradient(90deg, #38a745 0%, #4cce5b 63%);
 }
 
+.border-theme-green {
+  border-color: #4cce5b;
+}
+
 .text-theme-green {
   color: #38a745;
+}
+
+.theme-btn2 {
+  background: linear-gradient(90deg, #38a745 0%, #4cce5b 63%);
+}
+
+.theme-btn2:hover {
+  background: linear-gradient(90deg, #4cce5b 0%, #38a745 63%);
 }
 
 /* TABS */
@@ -193,4 +223,20 @@ div[role="tablist"] {
   padding: 25px;
   border-radius: 4px;
   margin: 50px auto 30px auto;
+}
+
+/* Modal */
+div[role="dialog"] div {
+  border-radius: 0% !important;
+}
+
+#login-email,
+#login-password {
+  border-radius: 0;
+  outline: none;
+  box-shadow: none;
+}
+
+.focus\:border-cyan-500:focus {
+  border-color: #38a745 !important;
 }

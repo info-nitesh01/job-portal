@@ -1,4 +1,5 @@
 import HomeBanner from "@/components/HomeBanner";
+import JobCategory from "@/components/Job-Category";
 import JobArea from "@/components/JobArea";
 import UserNav from "@/components/UserNav";
 
@@ -7,6 +8,7 @@ export default function Home() {
     <>
       <UserNav />
       <HomeBanner />
+      <JobCategory />
       <JobArea />
     </>
   );
