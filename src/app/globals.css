@@ -231,6 +231,8 @@ div[role="dialog"] div {
 }
 
 input[type="text"],
+input[type="password"],
+input[type="date"],
 textarea {
   border-radius: 0 !important;
   outline: none;
@@ -253,4 +255,10 @@ input[type="text"]::placeholder {
 
 .focus\:border-cyan-500:focus {
   border-color: #38a745 !important;
+}
+
+.required::after {
+  content: "*";
+  color: #e32;
+  font-weight: 1000;
 }

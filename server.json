@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": "b8eb",
+      "name": "Curran Daniels",
+      "email": "wepatugivo@mailinator.com",
+      "usertype": "candidate",
+      "password": "Pa$$w0rd!",
+      "dateofbirth": "2011-03-01",
+      "phone": "+1 (457) 733-7753",
+      "jobtitle": "Esse error tenetur v",
+      "address": "Sed hic velit qui ex",
+      "gender": "Male",
+      "facebookLink": "Nostrud voluptatem o",
+      "instaLink": "Facere in earum in q",
+      "dribblelink": "Ut consectetur place",
+      "ldLink": "Dolor id vitae aliq"
+    },
+    {
+      "id": "05f5",
+      "name": "Cody Lloyd",
+      "email": "faxyvasema@mailinator.com",
+      "usertype": "candidate",
+      "password": "Pa$$w0rd!",
+      "dateofbirth": "2010-12-07",
+      "phone": "+1 (454) 982-3292",
+      "jobtitle": "Modi dolorem consequ",
+      "address": "Doloribus ad et quae",
+      "gender": "male",
+      "facebookLink": "Corporis minus quo r",
+      "instaLink": "Quisquam eaque at vo",
+      "dribblelink": "Eveniet et non null",
+      "ldLink": "Proident architecto"
+    },
+    {
+      "id": "c85d",
+      "name": "Sydnee Bentley",
+      "email": "nsingh@gmail.com",
+      "usertype": "employer",
+      "password": "Pa$$w0rd!",
+      "dateofbirth": "2008-11-28",
+      "phone": "+1 (368) 257-9069",
+      "jobtitle": "Temporibus necessita",
+      "address": "Quod cupiditate volu",
+      "gender": "Female",
+      "facebookLink": "Asperiores ut iste e",
+      "instaLink": "Minim animi reprehe",
+      "dribblelink": "Temporibus a nostrum",
+      "ldLink": "Consequatur in tempo"
+    }
+  ]
+}
