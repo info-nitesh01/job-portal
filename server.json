@@ -1,52 +1,47 @@
 {
   "users": [
     {
-      "id": "b8eb",
-      "name": "Curran Daniels",
-      "email": "wepatugivo@mailinator.com",
+      "id": "c5ea",
+      "name": "Dylan Barnett",
+      "email": "noro@mailinator.com",
       "usertype": "candidate",
-      "password": "Pa$$w0rd!",
-      "dateofbirth": "2011-03-01",
-      "phone": "+1 (457) 733-7753",
-      "jobtitle": "Esse error tenetur v",
-      "address": "Sed hic velit qui ex",
+      "password": "tygujazu",
+      "dateofbirth": "1999-10-17",
+      "phone": "+1 (987) 191-4593",
+      "jobtitle": "Ut anim adipisicing ",
+      "address": "Consequuntur ad aut ",
       "gender": "Male",
-      "facebookLink": "Nostrud voluptatem o",
-      "instaLink": "Facere in earum in q",
-      "dribblelink": "Ut consectetur place",
-      "ldLink": "Dolor id vitae aliq"
+      "facebookLink": "Quia aut laudantium",
+      "instaLink": "Nisi est anim et qu",
+      "dribblelink": "Delectus autem comm",
+      "ldLink": "Aut blanditiis ex vo"
     },
     {
-      "id": "05f5",
-      "name": "Cody Lloyd",
-      "email": "faxyvasema@mailinator.com",
-      "usertype": "candidate",
-      "password": "Pa$$w0rd!",
-      "dateofbirth": "2010-12-07",
-      "phone": "+1 (454) 982-3292",
-      "jobtitle": "Modi dolorem consequ",
-      "address": "Doloribus ad et quae",
-      "gender": "male",
-      "facebookLink": "Corporis minus quo r",
-      "instaLink": "Quisquam eaque at vo",
-      "dribblelink": "Eveniet et non null",
-      "ldLink": "Proident architecto"
-    },
-    {
-      "id": "c85d",
-      "name": "Sydnee Bentley",
-      "email": "nsingh@gmail.com",
+      "id": "1bb7",
+      "name": "Leonard Stafford",
+      "email": "dikif@mailinator.com",
       "usertype": "employer",
-      "password": "Pa$$w0rd!",
-      "dateofbirth": "2008-11-28",
-      "phone": "+1 (368) 257-9069",
-      "jobtitle": "Temporibus necessita",
-      "address": "Quod cupiditate volu",
+      "password": "sywijeqy",
+      "dateofbirth": "1987-06-25",
+      "phone": "+1 (844) 243-4371",
+      "jobtitle": "",
+      "address": "Aliqua Officia ut e",
       "gender": "Female",
-      "facebookLink": "Asperiores ut iste e",
-      "instaLink": "Minim animi reprehe",
-      "dribblelink": "Temporibus a nostrum",
-      "ldLink": "Consequatur in tempo"
+      "facebookLink": "Quis dolor cumque ut",
+      "instaLink": "Quis et id excepturi",
+      "dribblelink": "Cupiditate repellend",
+      "ldLink": "Ab et autem corrupti"
+    }
+  ],
+  "jobList": [
+    {
+      "id": "b8eb",
+      "title": "UI/UX Designer",
+      "domain": "winbrans.com",
+      "salary": "$20k - $25k",
+      "location": "210-27 Quadra, Market Street, Victoria Canada",
+      "jobtype": "Full Time",
+      "logo": "https://templates.hibootstrap.com/gable/default/assets/img/home-1/jobs/1.png"
     }
   ]
 }

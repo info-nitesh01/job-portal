@@ -6,6 +6,8 @@ import ToastComponent from '@/components/ToastComponent'
 import UserNav from '@/components/UserNav'
 import { Label, Radio, TextInput } from 'flowbite-react'
 import React, { useState } from 'react'
+import { postData } from '../store/api/apiSlice'
+import { useDispatch, useSelector } from 'react-redux'
 
 const breadCrumbPages: any = [{ page: "Home", link: "/" }];
 export default function SugnupPage() {
@@ -23,6 +25,8 @@ export default function SugnupPage() {
     const [dribblelink, setdribblelink] = useState("");
     const [ldLink, setldLink] = useState("");
     const [showToast, setshowToast] = useState({ toasttype: "", msg: "" })
+    const dispatch = useDispatch<any>();
+    const state = useSelector((state) => state);
 
     let handlesignup = () => {
         let signupData = {
@@ -41,26 +45,27 @@ export default function SugnupPage() {
             "ldLink": ldLink,
         }
 
+
         fetch('http://localhost:4000/users')
             .then(response => response.json())
             .then(users => {
                 let filteredApiData = users.filter((item: any) => { return item.email === email })
-                console.log(users)
                 if (filteredApiData.length > 0) {
                     setshowToast({ toasttype: "warning", msg: "User already exists!" })
                 } else {
                     if ((fullName && email && userType && password && phone && gender) !== "") {
                         setshowToast({ toasttype: "success", msg: "Signed Up Successfully." })
+                        dispatch(postData({ userdata: signupData, dbName: "/users" }))
 
-                        fetch('http://localhost:4000/users', {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify(signupData),
-                        })
-                            .then(response => response.json())
-                            .then(user => console.log(user));
+                        // fetch('http://localhost:4000/users', {
+                        //     method: 'POST',
+                        //     headers: {
+                        //         'Content-Type': 'application/json',
+                        //     },
+                        //     body: JSON.stringify(signupData),
+                        // })
+                        //     .then(response => response.json())
+                        //     .then(user => console.log(user));
 
                         { setfullName(""); setemail(""); setuserType(""); setpassword(""); setphone(""); setgender("male"); setuserType("candidate"); }
                     } else {

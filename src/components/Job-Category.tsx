@@ -67,8 +67,8 @@ export default function JobCategory() {
         <div className='p-12 px-28'>
             <h1 className='text-4xl font-bold text-center mb-10'>Choose Your Desire Category</h1>
             <div className='grid grid-cols-5'>
-                {jobCategory.map((item) => {
-                    return <div className='border p-8 text-center hover:shadow-lg'>
+                {jobCategory.map((item, i) => {
+                    return <div key={i} className='border p-8 text-center hover:shadow-lg'>
                         {item.icon}
                         <h5 className="tracking-tight font-semibold text-gray-900 w-2/3 m-auto "> {item.categoryname} </h5>
                     </div>
