@@ -15,8 +15,8 @@ export default function UserNav() {
                 <img src="https://templates.hibootstrap.com/gable/default/assets/img/logo.png" className="mr-3 h-12" alt="Flowbite React Logo" />
             </Link>
             <div className="flex md:order-2">
-                <Link href={"/login"} className="common-btn px-7 py-3" role="button"><span className="text flex items-center"><PlusCircleIcon className="h-4 rounded-sm me-2" />Login</span></Link>
-                <button className="common-btn-2 mx-2 px-7 py-3" role="button"><span className="text flex items-center"><UserIcon className="h-4 rounded-sm me-2" />Sign Up</span></button>
+                <Link href={"/login"} className="common-btn px-7 py-3" ><span className="text flex items-center"><PlusCircleIcon className="h-4 rounded-sm me-2" />Login</span></Link>
+                <Link href={"/signup"} className="common-btn-2 mx-2 px-7 py-3"><span className="text flex items-center"><UserIcon className="h-4 rounded-sm me-2" />Sign Up</span></Link>
                 <Navbar.Toggle />
             </div>
             {/* <Navbar.Collapse>

@@ -230,13 +230,35 @@ div[role="dialog"] div {
   border-radius: 0% !important;
 }
 
-#login-email,
-#login-password {
-  border-radius: 0;
+input[type="text"],
+input[type="password"],
+input[type="date"],
+textarea {
+  border-radius: 0 !important;
   outline: none;
   box-shadow: none;
+  --tw-ring-opacity: none !important;
+  font-size: 1rem !important;
+}
+
+input[type="radio"] {
+  outline: none;
+  box-shadow: none;
+  --tw-ring-opacity: none !important;
+  color: #3eb34c;
+}
+
+input[type="text"]::placeholder {
+  color: rgb(216, 216, 216);
+  opacity: 1;
 }
 
 .focus\:border-cyan-500:focus {
   border-color: #38a745 !important;
+}
+
+.required::after {
+  content: "*";
+  color: #e32;
+  font-weight: 1000;
 }

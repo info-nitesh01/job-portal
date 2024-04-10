@@ -1,3 +1,4 @@
+import FooterComponent from "@/components/FooterComponent";
 import HomeBanner from "@/components/HomeBanner";
 import JobCategory from "@/components/Job-Category";
 import JobArea from "@/components/JobArea";
@@ -10,6 +11,7 @@ export default function Home() {
       <HomeBanner />
       <JobCategory />
       <JobArea />
+      <FooterComponent />
     </>
   );
 }

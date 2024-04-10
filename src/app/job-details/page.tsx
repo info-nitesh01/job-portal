@@ -1,6 +1,7 @@
 "use client";
 
 import Bcrumb from "@/components/Bcrumb";
+import FooterComponent from "@/components/FooterComponent";
 import UserNav from "@/components/UserNav";
 import { AcademicCapIcon, ChevronRightIcon, InboxArrowDownIcon, MapPinIcon, PhoneIcon, StarIcon, UserGroupIcon } from "@heroicons/react/16/solid";
 import { CurrencyDollarIcon } from "@heroicons/react/20/solid";
@@ -84,6 +85,7 @@ export default function JobDetails() {
                 </div>
 
             </div>
+            <FooterComponent />
         </>
     )
 }
