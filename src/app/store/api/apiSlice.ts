@@ -10,16 +10,17 @@ interface ApiState {
 
 // Get
 export const fetchData = createAsyncThunk('fetchData', async (dbName: string) => {
-    const response = await axios.get('http://localhost:4000' + dbName);
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    const response = await axios.get(apiUrl + dbName);
     return response.data;
 })
 
 //Post
 export const postData = createAsyncThunk('postData', async (e: { dbName: string, userdata: object }) => {
-    console.log(e)
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
     const config = {
         method: 'post',
-        url: 'http://localhost:4000' + e.dbName,
+        url: apiUrl + e.dbName,
         headers: {
             'Content-Type': 'application/json',
         },

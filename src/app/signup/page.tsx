@@ -10,7 +10,10 @@ import { postData } from '../store/api/apiSlice'
 import { useDispatch, useSelector } from 'react-redux'
 
 const breadCrumbPages: any = [{ page: "Home", link: "/" }];
+
+
 export default function SugnupPage() {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
     const [fullName, setfullName] = useState("");
     const [email, setemail] = useState("");
     const [dob, setdob] = useState("");
@@ -27,10 +30,19 @@ export default function SugnupPage() {
     const [showToast, setshowToast] = useState({ toasttype: "", msg: "" })
     const dispatch = useDispatch<any>();
     const state = useSelector((state) => state);
+    const [file, setfile] = useState()
+    let handlesignup = async () => {
+        const cvData = new FormData();
+        cvData.set('file', file as any)
+        const result = await fetch("api/upload", {
+            method: "POST",
+            body: cvData
+        })
+        console.log(await result.json());
 
-    let handlesignup = () => {
         let signupData = {
             "name": fullName,
+            "cv": 'file',
             "email": email,
             "usertype": userType,
             "password": password,
@@ -45,8 +57,7 @@ export default function SugnupPage() {
             "ldLink": ldLink,
         }
 
-
-        fetch('http://localhost:4000/users')
+        fetch(apiUrl + '/users')
             .then(response => response.json())
             .then(users => {
                 let filteredApiData = users.filter((item: any) => { return item.email === email })
@@ -56,17 +67,6 @@ export default function SugnupPage() {
                     if ((fullName && email && userType && password && phone && gender) !== "") {
                         setshowToast({ toasttype: "success", msg: "Signed Up Successfully." })
                         dispatch(postData({ userdata: signupData, dbName: "/users" }))
-
-                        // fetch('http://localhost:4000/users', {
-                        //     method: 'POST',
-                        //     headers: {
-                        //         'Content-Type': 'application/json',
-                        //     },
-                        //     body: JSON.stringify(signupData),
-                        // })
-                        //     .then(response => response.json())
-                        //     .then(user => console.log(user));
-
                         { setfullName(""); setemail(""); setuserType(""); setpassword(""); setphone(""); setgender("male"); setuserType("candidate"); }
                     } else {
                         setshowToast({ toasttype: "warning", msg: "Please fill all the mandatory details!" })
@@ -95,12 +95,13 @@ export default function SugnupPage() {
             <div className='border p-10 mx-24 mb-14'>
                 <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white mb-10"> Basic Information </h5>
                 <div className='flex items-center mb-10'>
-                    <button className="theme-btn2 px-10 py-3 mb-2 w-fit text-white flex items-center" role="button"> Upload Your CV </button>
+                    <input type="file" id='cvUpload' className='hidden' onChange={(e: any) => setfile(e.target.files?.[0])} />
+                    <label htmlFor="cvUpload" className="theme-btn2 px-10 py-3 mb-2 w-fit text-white flex items-center" role="button"> Upload Your CV </label>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
                     <div>
                         <Label htmlFor="signup-name" className='text-gray-400 text-base required' value="Your Name" />
-                        <TextInput onChange={(e) => setfullName(e.target.value)} id="signup-name" className='mt-2' value={fullName} placeholder="Full Name" required style={{ padding: '15px' }} />
+                        <TextInput onChange={(e) => setfullName(e.target.value[0])} id="signup-name" className='mt-2' value={fullName} placeholder="Full Name" required style={{ padding: '15px' }} />
                     </div>
                     <div>
                         <Label htmlFor="signup-phone" className='text-gray-400 text-base required' value="Your Phone" />

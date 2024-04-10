@@ -2,12 +2,13 @@
 "use client";
 
 import { ArrowRightIcon, MagnifyingGlassIcon, UserIcon } from "@heroicons/react/16/solid";
-import { Button, Checkbox, Label, Modal, TextInput } from "flowbite-react";
-import { useRef, useState } from "react";
+import { Checkbox, Label, Modal, TextInput } from "flowbite-react";
+import { useState } from "react";
 import ToastComponent from "./ToastComponent";
 import { InformationCircleIcon } from "@heroicons/react/24/solid";
 
 export default function LoginModal(props: any) {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
     const [openModal, setOpenModal] = useState(false);
     const [email, setemail] = useState("")
     const [password, setpassword] = useState("");
@@ -17,7 +18,7 @@ export default function LoginModal(props: any) {
     const [showToast, setshowToast] = useState({ toasttype: "", msg: "" })
 
     const handleLogin = () => {
-        fetch('http://localhost:4000/users')
+        fetch(apiUrl + '/users')
             .then(response => response.json())
             .then(users => {
                 let filteredApiData = users.filter((item: any) => { return item.email === email })
@@ -28,8 +29,12 @@ export default function LoginModal(props: any) {
                     if (filteredApiData[0].password !== password) {
                         setpassError("");
                         setlogin(false);
+                    } else if (filteredApiData[0].usertype !== props.userType.toLowerCase()) {
+                        setshowToast({ toasttype: "warning", msg: "Not authorized to sign in as " + props.userType + "!" });
+                        // setemail("");
+                        // setpassword("");
                     } else {
-                        setshowToast({ toasttype: "success", msg: "Login Successfully." })
+                        setshowToast({ toasttype: "success", msg: "Logged in Successfully." })
                         setlogin(true);
                         setemail("");
                         setpassword("");
