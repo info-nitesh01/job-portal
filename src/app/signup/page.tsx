@@ -29,6 +29,7 @@ export default function SugnupPage() {
     const [ldLink, setldLink] = useState("");
     const [showToast, setshowToast] = useState({ toasttype: "", msg: "" })
     const dispatch = useDispatch<any>();
+    const [fileInputName, setfileInputName] = useState("Upload Your CV")
     const state = useSelector((state) => state);
     const [file, setfile] = useState()
     let handlesignup = async () => {
@@ -42,7 +43,7 @@ export default function SugnupPage() {
 
         let signupData = {
             "name": fullName,
-            "cv": 'file',
+            "cv": fileInputName,
             "email": email,
             "usertype": userType,
             "password": password,
@@ -95,13 +96,13 @@ export default function SugnupPage() {
             <div className='border p-10 mx-24 mb-14'>
                 <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white mb-10"> Basic Information </h5>
                 <div className='flex items-center mb-10'>
-                    <input type="file" id='cvUpload' className='hidden' onChange={(e: any) => setfile(e.target.files?.[0])} />
-                    <label htmlFor="cvUpload" className="theme-btn2 px-10 py-3 mb-2 w-fit text-white flex items-center" role="button"> Upload Your CV </label>
+                    <input type="file" id='cvUpload' className='hidden' onChange={(e: any) => { setfile(e.target.files?.[0]); setfileInputName(e.target.files?.[0].name) }} />
+                    <label htmlFor="cvUpload" className="theme-btn2 px-10 py-3 mb-2 w-fit text-white flex items-center" role="button"> {fileInputName} </label>
                 </div>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
                     <div>
                         <Label htmlFor="signup-name" className='text-gray-400 text-base required' value="Your Name" />
-                        <TextInput onChange={(e) => setfullName(e.target.value[0])} id="signup-name" className='mt-2' value={fullName} placeholder="Full Name" required style={{ padding: '15px' }} />
+                        <TextInput onChange={(e) => setfullName(e.target.value)} id="signup-name" className='mt-2' value={fullName} placeholder="Full Name" required style={{ padding: '15px' }} />
                     </div>
                     <div>
                         <Label htmlFor="signup-phone" className='text-gray-400 text-base required' value="Your Phone" />

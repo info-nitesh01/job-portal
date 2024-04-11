@@ -6,6 +6,7 @@ import { Checkbox, Label, Modal, TextInput } from "flowbite-react";
 import { useState } from "react";
 import ToastComponent from "./ToastComponent";
 import { InformationCircleIcon } from "@heroicons/react/24/solid";
+import { useRouter } from "next/navigation";
 
 export default function LoginModal(props: any) {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -16,6 +17,8 @@ export default function LoginModal(props: any) {
     const [emailError, setemailError] = useState("hidden")
     const [passError, setpassError] = useState("hidden")
     const [showToast, setshowToast] = useState({ toasttype: "", msg: "" })
+    const router = useRouter()
+
 
     const handleLogin = () => {
         fetch(apiUrl + '/users')
@@ -34,11 +37,17 @@ export default function LoginModal(props: any) {
                         // setemail("");
                         // setpassword("");
                     } else {
+                        let data: any = { id: filteredApiData[0].id, name: filteredApiData[0].name, email: filteredApiData[0].email }
                         setshowToast({ toasttype: "success", msg: "Logged in Successfully." })
                         setlogin(true);
+                        localStorage.setItem("userdata", JSON.stringify(data));
                         setemail("");
                         setpassword("");
                         setOpenModal(false);
+                        if (filteredApiData[0].usertype === 'candidate')
+                            router.push('/')
+                        else
+                            router.push('/post-job')
                     }
                 }
             });
