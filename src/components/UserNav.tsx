@@ -5,9 +5,11 @@ import { PlusCircleIcon, UserIcon } from "@heroicons/react/16/solid";
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function UserNav() {
     const pathname = usePathname();
+    const [defaultProf, setdefaultProf] = useState("https://pngset.com/images/default-profile-picture-circle-symbol-logo-trademark-number-transparent-png-890174.png")
     let userData: any = localStorage.getItem('userdata');
     let uData = JSON.parse(userData)
     const router = useRouter()
@@ -23,12 +25,13 @@ export default function UserNav() {
             </Link>
             {(userData !== null) ?
                 <div className="flex md:order-2">
-                    <Dropdown arrowIcon={false} inline label={<Avatar alt="User settings" img="https://pngset.com/images/default-profile-picture-circle-symbol-logo-trademark-number-transparent-png-890174.png" rounded />} >
-                        <Dropdown.Header>
-                            <span className="block text-sm">{(uData.name)}</span>
+                    <Dropdown arrowIcon={false} inline label={<><Avatar alt="User settings" className="border border-2 rounded-full border-theme-green" img={defaultProf} rounded /><span className="block text-sm ml-1 text-lg font-semibold">{uData.name}</span></>} >
+                        <Dropdown.Header className="text-center">
+                            <img className="h-14 m-auto rounded-full border border-2 border-theme-green" src={defaultProf} alt="" />
+                            <span className="block text-sm ml-1 text-lg font-semibold">{uData.name}</span>
                             <span className="block truncate text-sm font-medium">{uData.email}</span>
                         </Dropdown.Header>
-                        <Dropdown.Item>Dashboard</Dropdown.Item>
+                        <Dropdown.Item><Link href={"/profile"}>Profile</Link ></Dropdown.Item>
                         <Dropdown.Item>Settings</Dropdown.Item>
                         <Dropdown.Divider />
                         <Dropdown.Item onClick={handleSignout}>Sign out</Dropdown.Item>

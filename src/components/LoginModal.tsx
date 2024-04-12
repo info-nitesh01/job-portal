@@ -47,7 +47,7 @@ export default function LoginModal(props: any) {
                         if (filteredApiData[0].usertype === 'candidate')
                             router.push('/')
                         else
-                            router.push('/post-job')
+                            router.push('/posted-jobs')
                     }
                 }
             });

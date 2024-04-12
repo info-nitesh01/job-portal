@@ -24,9 +24,10 @@ export default function PostJobPage() {
     const [jobtype, setjobtype] = useState('Full Time');
     const [jobDescription, setjobDescription] = useState('');
     const dispatch = useDispatch<any>();
-
+    let localData: any = localStorage.getItem('userdata')
     const handlePostJob = () => {
         let postJobData = {
+            "employerID": JSON.parse(localData).id,
             "jobtitle": jobTitle,
             "jobcategory": jobCategory,
             "email": email,
@@ -73,7 +74,7 @@ export default function PostJobPage() {
                     </div>
                     <div>
                         <Label htmlFor="postjob-jobcategory" className='text-gray-400 text-base' value="Job Category" />
-                        <select id="postjob-jobcategory" onChange={(e) => setjobCategory(e.target.value)} value={jobCategory} className='border-gray-300 mt-2 text-gray-500'>
+                        <select id="postjob-jobcategory" onChange={(e) => setjobCategory(e.target.value)} defaultValue={jobCategory} className='border-gray-300 mt-2 text-gray-500'>
                             <option value="IT & Technology" selected>IT & Technology</option>
                             <option value="Web Developer">Web Developer</option>
                             <option value="UX/UI Design">UX/UI Design</option>
