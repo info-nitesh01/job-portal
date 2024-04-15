@@ -320,3 +320,15 @@ select:not([size]):focus {
   padding: 0.2em;
   height: 2em;
 }
+
+/* Timeline CSS */
+div[data-testid="timeline-point"] span {
+  background-color: transparent;
+}
+
+div[data-testid="timeline-point"] span svg {
+  color: #38a745;
+  height: 20px;
+  width: 20px;
+  transform: rotate(45deg);
+}

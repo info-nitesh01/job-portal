@@ -6,7 +6,7 @@
       "cv": "AEE ASSGNMENT.docx",
       "email": "soriduqigo@mailinator.com",
       "usertype": "candidate",
-      "password": "guqigixy",
+      "password": "admin",
       "dateofbirth": "1979-11-24",
       "phone": "+1 (435) 892-7632",
       "jobtitle": "UI/UX Designer",
@@ -23,7 +23,7 @@
       "cv": "AEE ASSGNMENT.docx",
       "email": "fusutal@mailinator.com",
       "usertype": "candidate",
-      "password": "gujysece",
+      "password": "admin",
       "dateofbirth": "1970-10-06",
       "phone": "+1 (784) 943-7639",
       "jobtitle": "UI/UX Designer",
@@ -74,7 +74,7 @@
       "cv": "AEE ASSGNMENT.docx",
       "email": "mekedip@mailinator.com",
       "usertype": "candidate",
-      "password": "fiwufodo",
+      "password": "admin",
       "dateofbirth": "2019-09-13",
       "phone": "+1 (163) 571-8663",
       "jobtitle": "UI/UX Designer",
@@ -91,7 +91,7 @@
       "cv": "AEE ASSGNMENT.docx",
       "email": "hufe@mailinator.com",
       "usertype": "employer",
-      "password": "wisywaty",
+      "password": "admin",
       "dateofbirth": "1980-08-27",
       "phone": "+1 (929) 162-6031",
       "jobtitle": "UI/UX Designer",
@@ -108,7 +108,7 @@
       "cv": "AEE ASSGNMENT.docx",
       "email": "burezuni@mailinator.com",
       "usertype": "candidate",
-      "password": "fidaxuzi",
+      "password": "admin",
       "dateofbirth": "1977-05-14",
       "phone": "+1 (546) 204-4711",
       "jobtitle": "UI/UX Designer",
@@ -125,7 +125,7 @@
       "cv": "AEE ASSGNMENT.docx",
       "email": "kizewuba@mailinator.com",
       "usertype": "employer",
-      "password": "cuxamywy",
+      "password": "admin",
       "dateofbirth": "1989-06-08",
       "phone": "+1 (536) 837-2171",
       "jobtitle": "UI/UX Designer",
@@ -151,6 +151,15 @@
       "location": "Aut eiusmod non ad l",
       "jobtype": "Intern",
       "jobdescription": "In ut nulla praesent",
+      "appliedCandidates": [
+        "73bc",
+        "4cf1",
+        "4cf1",
+        "4cf1",
+        "4cf1",
+        "c0bd",
+        "c0bd"
+      ],
       "logo": ""
     },
     {
@@ -166,6 +175,12 @@
       "location": "Dolore non deleniti ",
       "jobtype": "Part Time",
       "jobdescription": "Ex sed mollit quo hi",
+      "appliedCandidates": [
+        "53b8",
+        "4cf1",
+        "4cf1",
+        "4cf1"
+      ],
       "logo": ""
     },
     {
@@ -182,10 +197,12 @@
       "location": "Ullamco eu at adipis",
       "jobtype": "Full Time",
       "jobdescription": "Nemo eligendi soluta",
+      "appliedCandidates": [],
       "logo": ""
     },
     {
       "id": "dfc1",
+      "employerID": "c0bd",
       "jobtitle": "UI/UX Designer",
       "jobcategory": "UX/UI Design",
       "email": "paxexunyze@mailinator.com",
@@ -197,11 +214,15 @@
       "location": "Id modi sunt accusa",
       "jobtype": "Intern",
       "jobdescription": "Dolorum ullam eos iDolorum ullam eos iDolorum ullam eos iDolorum ullam eos iDolorum ullam eos i",
+      "appliedCandidates": [
+        "4cf1",
+        "53b8"
+      ],
       "logo": ""
     },
     {
       "id": "2ff6",
-      "employerID": "c0bd",
+      "employerID": "f452",
       "jobtitle": "UI/UX Designer",
       "jobcategory": "IT & Technology",
       "email": "waqafowyva@mailinator.com",
@@ -213,6 +234,10 @@
       "location": "Sunt deserunt ut ea",
       "jobtype": "Part Time",
       "jobdescription": "Voluptate culpa con Voluptate culpa con Voluptate culpa con",
+      "appliedCandidates": [
+        "4cf1",
+        "4cf1"
+      ],
       "logo": ""
     },
     {
@@ -229,6 +254,9 @@
       "location": "Rerum dolor elit ne",
       "jobtype": "Part Time",
       "jobdescription": "Sit in quisquam dol",
+      "appliedCandidates": [
+        "4cf1"
+      ],
       "logo": ""
     }
   ]

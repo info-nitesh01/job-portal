@@ -6,14 +6,16 @@ import UserNav from "@/components/UserNav";
 import { AcademicCapIcon, ChevronRightIcon, InboxArrowDownIcon, MapPinIcon, PhoneIcon, StarIcon, UserGroupIcon } from "@heroicons/react/16/solid";
 import { CurrencyDollarIcon } from "@heroicons/react/20/solid";
 import { Card, Tabs } from "flowbite-react";
-import { useEffect } from "react";
-import { fetchData } from "../store/api/apiSlice";
+import { useEffect, useState } from "react";
+import { fetchData, updateData } from "../store/api/apiSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
+import ToastComponent from "@/components/ToastComponent";
 
 const breadCrumbPages: any = [{ page: "Home", link: "/" }];
 
 export default function JobList() {
+    const [showToast, setshowToast] = useState({ toasttype: "", msg: "" })
     const dispatch = useDispatch<any>();
     const state: any = useSelector((state) => state);
     useEffect(() => {
@@ -21,14 +23,30 @@ export default function JobList() {
     }, [])
 
     let jobListData: any = state.apiData.data;
+    console.log(jobListData)
     let recentJobData = [];
     if (jobListData !== null) {
         let arrayForSort = [...jobListData]
         recentJobData = arrayForSort.reverse();
     }
 
+    let userData: any = localStorage.getItem("userdata");
+    const handleJobApply = (id: string) => {
+        let curentBtn = document.getElementById(`btnApply${id}`);
+        let filteredApiData = jobListData.filter((item: any) => { return item.id === id })
+        let newData = JSON.parse(JSON.stringify(filteredApiData[0]));
+        console.log(newData);
+        newData.appliedCandidates.push(JSON.parse(userData).id);
+        dispatch(updateData({ dataUrl: `/jobList/${id}`, appliedData: newData }));
+        setshowToast({ toasttype: "success", msg: "Job Applied Successfully." });
+        if (curentBtn !== null) curentBtn.innerHTML = "Applied";
+    }
     return (
         <>
+            {(showToast.toasttype !== "") ?
+                <ToastComponent toastType={showToast.toasttype} msg={showToast.msg} />
+                : <></>
+            }
             <UserNav />
             <div className="bg-theme-green text-center h-96 flex items-center flex-col justify-center">
                 <h1 className='text-4xl font-extrabold text-white mb-6'>Job List</h1>
@@ -50,7 +68,7 @@ export default function JobList() {
                                             </p>
                                         </div>
                                         <div className='flex flex-col justify-center'>
-                                            <button className="common-btn px-5 py-2 mb-2" role="button"><span>Apply</span></button>
+                                            <button className="common-btn px-5 py-2 mb-2" onClick={() => handleJobApply(item.id)} role="button"><span id={`btnApply${item.id}`}>Apply</span></button>
                                             <p className="theme-btn2 px-4 py-2 text-white" role="button">Full Time</p>
                                         </div>
                                     </div>
@@ -76,7 +94,7 @@ export default function JobList() {
                                             </p>
                                         </div>
                                         <div className='flex flex-col justify-center'>
-                                            <button className="common-btn px-5 py-2 mb-2" role="button"><span>Apply</span></button>
+                                            <button className="common-btn px-5 py-2 mb-2" role="button" onClick={() => handleJobApply(item.id)}><span id={`btnApply${item.id}`}>Apply</span></button>
                                             <p className="theme-btn2 px-4 py-2 text-white" role="button">Full Time</p>
                                         </div>
                                     </div>

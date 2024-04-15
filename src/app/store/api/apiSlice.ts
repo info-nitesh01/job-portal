@@ -38,6 +38,13 @@ export const postData = createAsyncThunk('postData', async (e: { dbName: string,
 }
 )
 
+//Update
+export const updateData = createAsyncThunk('updateData', async (e: { dataUrl: string, appliedData: object }) => {
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    const response = await axios.put(apiUrl + e.dataUrl, e.appliedData);
+    return response.data;
+})
+
 // Slice
 const apiSlice = createSlice({
     name: 'apiData',
@@ -59,6 +66,38 @@ const apiSlice = createSlice({
         });
         // Request is rejected
         builder.addCase(fetchData.rejected, (state, action) => {
+            state.isError = true;
+            console.error("Error", action.error);
+        });
+
+
+        // API Fetching (POST) is pending
+        builder.addCase(postData.pending, (state) => {
+            state.isLoading = true;
+        });
+        // API Request fulfilled (Success)
+        builder.addCase(postData.fulfilled, (state, action: PayloadAction<any>) => {
+            state.isLoading = false;
+            state.data = action.payload;
+        });
+        // Request is rejected
+        builder.addCase(postData.rejected, (state, action) => {
+            state.isError = true;
+            console.error("Error", action.error);
+        });
+
+
+        // API Fetching (PUT) is pending
+        builder.addCase(updateData.pending, (state) => {
+            state.isLoading = true;
+        });
+        // API Request fulfilled (Success)
+        builder.addCase(updateData.fulfilled, (state, action: PayloadAction<any>) => {
+            state.isLoading = false;
+            state.data = action.payload;
+        });
+        // Request is rejected
+        builder.addCase(updateData.rejected, (state, action) => {
             state.isError = true;
             console.error("Error", action.error);
         });

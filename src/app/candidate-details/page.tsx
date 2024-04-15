@@ -11,6 +11,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { BsFacebook, BsLinkedin, BsInstagram, BsTwitter } from "react-icons/bs";
 import { ArrowDownOnSquareIcon } from "@heroicons/react/24/solid";
+import UserTimeline from "@/components/UserTimeline";
 
 const breadCrumbPages: any = [{ page: "Home", link: "/" }];
 
@@ -73,6 +74,7 @@ export default function JobList() {
                     <h1 className='text-gray-500 mb-2 w-full'>Bachelor of Business Administation university of Gable</h1>
                     <Link href={""} className="common-btn-2 mr-2 font-semibold px-10 py-3" ><span className="text flex items-center">View CV<EyeIcon className="h-5 rounded-sm ml-2" /></span></Link>
                     <Link href={""} className="common-btn-2 mx-2 font-semibold px-10 py-3"><span className="text flex items-center">Download CV<ArrowDownTrayIcon className="h-5 rounded-sm ml-2" /></span></Link>
+                    <UserTimeline />
                 </div>
             </div>
 

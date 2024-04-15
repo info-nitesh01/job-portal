@@ -26,8 +26,6 @@ export default function PostedJobList() {
     if (jobListData !== null && localData !== null) {
         filteredApiData = jobListData.filter((item: any) => { return item.employerID === JSON.parse(localData).id })
     }
-
-    let id = 122;
     return (
         <>
             <UserNav />
@@ -50,7 +48,7 @@ export default function PostedJobList() {
                                     </p>
                                 </div>
                                 <div className='flex flex-col col-span-2 justify-center'>
-                                    <Link href={`/candidate-list/?id=${id}`} className="common-btn px-5 py-2 mb-2" role="button"><span>Applied List</span></Link>
+                                    <Link href={`/posted-jobs/${item.id}`} className="common-btn px-5 py-2 mb-2" role="button"><span>Applied List</span></Link>
                                     <p className="theme-btn2 px-4 py-2 text-white text-center" role="button">Full Time</p>
                                 </div>
                             </div>
