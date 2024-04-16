@@ -8,6 +8,7 @@ import { Label, Radio, TextInput, Textarea } from 'flowbite-react'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { postData } from '../store/api/apiSlice'
+import { useRouter } from 'next/navigation'
 
 const breadCrumbPages: any = [{ page: "Home", link: "/" }];
 export default function PostJobPage() {
@@ -24,6 +25,7 @@ export default function PostJobPage() {
     const [jobtype, setjobtype] = useState('Full Time');
     const [jobDescription, setjobDescription] = useState('');
     const dispatch = useDispatch<any>();
+    const router = useRouter()
     let localData: any = localStorage.getItem('userdata')
     const handlePostJob = () => {
         let postJobData = {
@@ -39,6 +41,7 @@ export default function PostJobPage() {
             "location": location,
             "jobtype": jobtype,
             "jobdescription": jobDescription,
+            "appliedCandidates": [],
             "logo": ""
         }
 
@@ -52,6 +55,7 @@ export default function PostJobPage() {
         setTimeout(() => {
             setshowToast({ toasttype: "", msg: "" });
         }, 3000);
+        router.push('/posted-jobs')
     }
 
     return (

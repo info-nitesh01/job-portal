@@ -56,7 +56,7 @@ export default function UserNav() {
             </Navbar.Collapse> */}
             <div>
                 <Link className={`nav ${pathname == "/" ? "active" : ""} text-base mx-2 text-black`} href="/"> Home </Link>
-                <Link href="/about" className={`nav ${pathname == "/about" ? "active" : ""} text-base mx-2 text-black`} > About </Link>
+                <Link href="/job-list" className={`nav ${pathname == "/job-list" ? "active" : ""} text-base mx-2 text-black`} > All Jobs </Link>
                 <Link href="/services" className={`nav ${pathname == "/services" ? "active" : ""} text-base mx-2 text-black`} > Services </Link>
                 <Link href="/pricing" className={`nav ${pathname == "/pricing" ? "active" : ""} text-base mx-2 text-black`} > Pricing </Link>
                 <Link href="/contact" className={`nav ${pathname == "/contact" ? "active" : ""} text-base mx-2 text-black`} > Contact </Link>

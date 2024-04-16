@@ -34,10 +34,10 @@ export default function LoginModal(props: any) {
                         setlogin(false);
                     } else if (filteredApiData[0].usertype !== props.userType.toLowerCase()) {
                         setshowToast({ toasttype: "warning", msg: "Not authorized to sign in as " + props.userType + "!" });
-                        // setemail("");
-                        // setpassword("");
+                        setemail("");
+                        setpassword("");
                     } else {
-                        let data: any = { id: filteredApiData[0].id, name: filteredApiData[0].name, email: filteredApiData[0].email }
+                        let data: any = { id: filteredApiData[0].id, name: filteredApiData[0].name, email: filteredApiData[0].email, usertype: filteredApiData[0].usertype }
                         setshowToast({ toasttype: "success", msg: "Logged in Successfully." })
                         setlogin(true);
                         localStorage.setItem("userdata", JSON.stringify(data));

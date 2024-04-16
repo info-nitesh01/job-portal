@@ -3,7 +3,8 @@
     {
       "id": "fb95",
       "name": "Zane Ellison",
-      "cv": "AEE ASSGNMENT.docx",
+      "profile": "https://templates.hibootstrap.com/gable/default/assets/img/home-1/profile/1.jpg",
+      "cv": "Christine-Smith.pdf",
       "email": "soriduqigo@mailinator.com",
       "usertype": "candidate",
       "password": "admin",
@@ -12,15 +13,16 @@
       "jobtitle": "UI/UX Designer",
       "address": "Placeat magnam quib",
       "gender": "Female",
-      "facebookLink": "Nulla obcaecati nisi",
-      "instaLink": "Proident quos quis ",
-      "dribblelink": "Odit accusantium dol",
-      "ldLink": "Sed quam duis sed in"
+      "facebookLink": "https://www.facebook.com/",
+      "instaLink": "https://www.instagram.com/",
+      "dribblelink": "https://www.dribble.com/",
+      "ldLink": "https://www.linkedin.com/"
     },
     {
       "id": "f937",
       "name": "I",
-      "cv": "AEE ASSGNMENT.docx",
+      "profile": "https://templates.hibootstrap.com/gable/default/assets/img/home-1/profile/2.jpg",
+      "cv": "Christine-Smith.pdf",
       "email": "fusutal@mailinator.com",
       "usertype": "candidate",
       "password": "admin",
@@ -29,15 +31,16 @@
       "jobtitle": "UI/UX Designer",
       "address": "Fugit et enim facil",
       "gender": "Male",
-      "facebookLink": "Assumenda architecto",
-      "instaLink": "Nostrud maxime qui i",
-      "dribblelink": "Nulla est iste ea v",
-      "ldLink": "Est explicabo Verit"
+      "facebookLink": "https://www.facebook.com/",
+      "instaLink": "https://www.instagram.com/",
+      "dribblelink": "https://www.dribble.com/",
+      "ldLink": "https://www.linkedin.com/"
     },
     {
       "id": "4cf1",
       "name": "Kyle Dyka",
-      "cv": "AEE ASSGNMENT.docx",
+      "profile": "https://templates.hibootstrap.com/gable/default/assets/img/home-1/profile/3.jpg",
+      "cv": "Kyle-Dyka.pdf",
       "email": "dyka@mailinator.com",
       "usertype": "candidate",
       "password": "admin",
@@ -46,15 +49,16 @@
       "jobtitle": "UI/UX Designer",
       "address": "Impedit sunt nihil ",
       "gender": "Female",
-      "facebookLink": "Perspiciatis eum ra",
-      "instaLink": "Distinctio Consequa",
-      "dribblelink": "Quo iste dolores dol",
-      "ldLink": "Dolores repellendus"
+      "facebookLink": "https://www.facebook.com/",
+      "instaLink": "https://www.instagram.com/",
+      "dribblelink": "https://www.dribble.com/",
+      "ldLink": "https://www.linkedin.com/"
     },
     {
       "id": "c0bd",
       "name": "Nitesh Singh",
-      "cv": "AEE ASSGNMENT.docx",
+      "profile": "https://templates.hibootstrap.com/gable/default/assets/img/home-1/profile/4.jpg",
+      "cv": "MATTHEW-ELIOT.pdf",
       "email": "nsingh@gmail.com",
       "usertype": "employer",
       "password": "admin",
@@ -63,15 +67,16 @@
       "jobtitle": "UI/UX Designer",
       "address": "Est quia aute dignis",
       "gender": "Male",
-      "facebookLink": "Ea ad et dolor ea al",
-      "instaLink": "Voluptatem dolorem i",
-      "dribblelink": "Molestiae qui quod c",
-      "ldLink": "Esse qui reprehender"
+      "facebookLink": "https://www.facebook.com/",
+      "instaLink": "https://www.instagram.com/",
+      "dribblelink": "https://www.dribble.com/",
+      "ldLink": "https://www.linkedin.com/"
     },
     {
       "id": "aa5a",
       "name": "S",
-      "cv": "AEE ASSGNMENT.docx",
+      "profile": "https://templates.hibootstrap.com/gable/default/assets/img/home-1/profile/5.jpg",
+      "cv": "MATTHEW-ELIOT.pdf",
       "email": "mekedip@mailinator.com",
       "usertype": "candidate",
       "password": "admin",
@@ -80,15 +85,16 @@
       "jobtitle": "UI/UX Designer",
       "address": "Et placeat voluptas",
       "gender": "Male",
-      "facebookLink": "Incidunt numquam ve",
-      "instaLink": "Laborum Dolore nost",
-      "dribblelink": "Error dolorem dolor ",
-      "ldLink": "Ea aut laudantium q"
+      "facebookLink": "https://www.facebook.com/",
+      "instaLink": "https://www.instagram.com/",
+      "dribblelink": "https://www.dribble.com/",
+      "ldLink": "https://www.linkedin.com/"
     },
     {
       "id": "44b2",
       "name": "D",
-      "cv": "AEE ASSGNMENT.docx",
+      "profile": "https://templates.hibootstrap.com/gable/default/assets/img/home-1/profile/6.jpg",
+      "cv": "MATTHEW-ELIOT.pdf",
       "email": "hufe@mailinator.com",
       "usertype": "employer",
       "password": "admin",
@@ -97,15 +103,16 @@
       "jobtitle": "UI/UX Designer",
       "address": "Fuga Omnis maxime a",
       "gender": "Male",
-      "facebookLink": "Voluptatem Molestia",
-      "instaLink": "Explicabo Tempor qu",
-      "dribblelink": "Ex voluptatum odio d",
-      "ldLink": "Delectus dolore ali"
+      "facebookLink": "https://www.facebook.com/",
+      "instaLink": "https://www.instagram.com/",
+      "dribblelink": "https://www.dribble.com/",
+      "ldLink": "https://www.linkedin.com/"
     },
     {
       "id": "5ca7",
       "name": "V",
-      "cv": "AEE ASSGNMENT.docx",
+      "profile": "https://templates.hibootstrap.com/gable/default/assets/img/home-1/profile/7.jpg",
+      "cv": "ui-ux.pdf",
       "email": "burezuni@mailinator.com",
       "usertype": "candidate",
       "password": "admin",
@@ -114,15 +121,16 @@
       "jobtitle": "UI/UX Designer",
       "address": "Quo aliqua Tempore",
       "gender": "Female",
-      "facebookLink": "Ad eum laboris liber",
-      "instaLink": "Soluta temporibus lo",
-      "dribblelink": "Consequatur Quos ea",
-      "ldLink": "Sit id est fuga D"
+      "facebookLink": "https://www.facebook.com/",
+      "instaLink": "https://www.instagram.com/",
+      "dribblelink": "https://www.dribble.com/",
+      "ldLink": "https://www.linkedin.com/"
     },
     {
       "id": "f452",
       "name": "Quynn Patrick",
-      "cv": "AEE ASSGNMENT.docx",
+      "profile": "https://templates.hibootstrap.com/gable/default/assets/img/home-1/profile/8.jpg",
+      "cv": "ui-ux.pdf",
       "email": "kizewuba@mailinator.com",
       "usertype": "employer",
       "password": "admin",
@@ -131,10 +139,10 @@
       "jobtitle": "UI/UX Designer",
       "address": "Id tempore mollitia",
       "gender": "Female",
-      "facebookLink": "Duis fugiat volupta",
-      "instaLink": "Repudiandae dolor ea",
-      "dribblelink": "In totam nemo id mai",
-      "ldLink": "Duis sunt magnam dol"
+      "facebookLink": "https://www.facebook.com/",
+      "instaLink": "https://www.instagram.com/",
+      "dribblelink": "https://www.dribble.com/",
+      "ldLink": "https://www.linkedin.com/"
     }
   ],
   "jobList": [
@@ -149,7 +157,7 @@
       "minsal": "$3000",
       "maxsal": "$5000",
       "location": "Aut eiusmod non ad l",
-      "jobtype": "Intern",
+      "jobtype": "Internship",
       "jobdescription": "In ut nulla praesent",
       "appliedCandidates": [
         "73bc",
@@ -158,7 +166,11 @@
         "4cf1",
         "4cf1",
         "c0bd",
-        "c0bd"
+        "c0bd",
+        "c0bd",
+        "4cf1",
+        "4cf1",
+        "4cf1"
       ],
       "logo": ""
     },
@@ -176,7 +188,7 @@
       "jobtype": "Part Time",
       "jobdescription": "Ex sed mollit quo hi",
       "appliedCandidates": [
-        "53b8",
+        "4cf1",
         "4cf1",
         "4cf1",
         "4cf1"
@@ -212,11 +224,16 @@
       "minsal": "$2000",
       "maxsal": "$5000",
       "location": "Id modi sunt accusa",
-      "jobtype": "Intern",
+      "jobtype": "Internship",
       "jobdescription": "Dolorum ullam eos iDolorum ullam eos iDolorum ullam eos iDolorum ullam eos iDolorum ullam eos i",
       "appliedCandidates": [
         "4cf1",
-        "53b8"
+        "c0bd",
+        "4cf1",
+        "4cf1",
+        "4cf1",
+        "4cf1",
+        "4cf1"
       ],
       "logo": ""
     },
@@ -236,6 +253,7 @@
       "jobdescription": "Voluptate culpa con Voluptate culpa con Voluptate culpa con",
       "appliedCandidates": [
         "4cf1",
+        "4cf1",
         "4cf1"
       ],
       "logo": ""
@@ -254,6 +272,63 @@
       "location": "Rerum dolor elit ne",
       "jobtype": "Part Time",
       "jobdescription": "Sit in quisquam dol",
+      "appliedCandidates": [
+        "4cf1",
+        "4cf1",
+        "4cf1"
+      ],
+      "logo": ""
+    },
+    {
+      "id": "b927",
+      "employerID": "c0bd",
+      "jobtitle": "HR Manager",
+      "jobcategory": "IT & Technology",
+      "email": "qilyriwe@mailinator.com",
+      "companyname": "Mendoza Summers LLC",
+      "companydomain": "mailinator.com",
+      "vacancies": "2",
+      "minsal": "$1000",
+      "maxsal": "$3000",
+      "location": "28/A Street, New York City",
+      "jobtype": "Full Time",
+      "jobdescription": "Quibusdam enim labor Quibusdam enim labor Quibusdam enim labor Quibusdam enim labor Quibusdam enim labor Quibusdam enim labor Quibusdam enim labor Quibusdam enim labor",
+      "appliedCandidates": [
+        "4cf1"
+      ],
+      "logo": ""
+    },
+    {
+      "id": "d64e",
+      "employerID": "c0bd",
+      "jobtitle": ".Net MVC Developer",
+      "jobcategory": "IT & Technology",
+      "email": "wuvacusedi@mailinator.com",
+      "companyname": "Wise Sargent Traders",
+      "companydomain": "mailinator.com",
+      "vacancies": "1",
+      "minsal": "$2000",
+      "maxsal": "$3000",
+      "location": "28/A Street, New York City",
+      "jobtype": "Full Time",
+      "jobdescription": "Dignissimos aliquip ",
+      "appliedCandidates": [],
+      "logo": ""
+    },
+    {
+      "id": "57dc",
+      "employerID": "c0bd",
+      "jobtitle": "Database  Admin",
+      "jobcategory": "IT & Technology",
+      "email": "bonocosulu@mailinator.com",
+      "companyname": "Blake Hill Trading",
+      "companydomain": "mailinator.com",
+      "vacancies": "2",
+      "minsal": "$1000",
+      "maxsal": "$4000",
+      "location": "Ut velit sit volup",
+      "jobtype": "Part Time",
+      "jobdescription": "Adipisci error asper",
       "appliedCandidates": [
         "4cf1"
       ],

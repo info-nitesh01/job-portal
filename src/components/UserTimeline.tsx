@@ -2,8 +2,7 @@
 "use client";
 
 import { Squares2X2Icon } from "@heroicons/react/16/solid";
-import { Button, Timeline } from "flowbite-react";
-import { HiArrowNarrowRight } from "react-icons/hi";
+import { Timeline } from "flowbite-react";
 
 export default function UserTimeline() {
     return (
