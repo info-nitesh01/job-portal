@@ -15,8 +15,8 @@ export default function Loginpage() {
                 <h1 className='text-4xl font-extrabold text-white mb-6'>Log In</h1>
                 <Bcrumb prevpages={breadCrumbPages} lastPage="Login" />
             </div>
-            <h1 className='text-4xl p-8 pb-0 font-extrabold text-center mb-12'>Login Your Account</h1>
-            <div className='border p-10 mx-24 flex mb-14'>
+            <h1 className='text-4xl p-8 pb-0 font-extrabold text-center mb-5'>Login Your Account</h1>
+            <div className='border p-5 lg:p-10 lg:mx-24 lg:flex mb-14'>
                 <LoginModal userType="Candidate" />
                 <LoginModal userType="Employer" />
             </div>

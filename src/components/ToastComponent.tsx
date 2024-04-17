@@ -2,7 +2,6 @@
 "use client";
 
 import { Toast } from "flowbite-react";
-import { useState } from "react";
 import { HiCheck, HiExclamation, HiX } from "react-icons/hi";
 
 export default function ToastComponent(props: any) {

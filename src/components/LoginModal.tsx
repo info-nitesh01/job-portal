@@ -6,6 +6,7 @@ import { Checkbox, Label, Modal, TextInput } from "flowbite-react";
 import { useState } from "react";
 import ToastComponent from "./ToastComponent";
 import { InformationCircleIcon } from "@heroicons/react/24/solid";
+import { useRouter } from "next/navigation";
 
 export default function LoginModal(props: any) {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -16,6 +17,8 @@ export default function LoginModal(props: any) {
     const [emailError, setemailError] = useState("hidden")
     const [passError, setpassError] = useState("hidden")
     const [showToast, setshowToast] = useState({ toasttype: "", msg: "" })
+    const router = useRouter()
+
 
     const handleLogin = () => {
         fetch(apiUrl + '/users')
@@ -31,14 +34,21 @@ export default function LoginModal(props: any) {
                         setlogin(false);
                     } else if (filteredApiData[0].usertype !== props.userType.toLowerCase()) {
                         setshowToast({ toasttype: "warning", msg: "Not authorized to sign in as " + props.userType + "!" });
-                        // setemail("");
-                        // setpassword("");
+                        setemail("");
+                        setpassword("");
+                        setOpenModal(false)
                     } else {
+                        let data: any = { id: filteredApiData[0].id, name: filteredApiData[0].name, email: filteredApiData[0].email, usertype: filteredApiData[0].usertype }
                         setshowToast({ toasttype: "success", msg: "Logged in Successfully." })
                         setlogin(true);
+                        localStorage.setItem("userdata", JSON.stringify(data));
                         setemail("");
                         setpassword("");
                         setOpenModal(false);
+                        if (filteredApiData[0].usertype === 'candidate')
+                            router.push('/')
+                        else
+                            router.push('/posted-jobs')
                     }
                 }
             });
@@ -50,19 +60,19 @@ export default function LoginModal(props: any) {
     return (
         <>
             {(props.userType === 'Candidate') ?
-                <button onClick={() => setOpenModal(true)} className="theme-btn2 p-10 mb-2 w-1/2 text-white flex items-center mx-2" role="button">
+                <button onClick={() => setOpenModal(true)} className="theme-btn2 p-5 md:p-10 mb-2 w-full lg:w-1/2 text-white flex items-center lg:mx-2" role="button">
                     <MagnifyingGlassIcon className='h-10' />
                     <div className='text-start ml-5'>
                         <p className='mb-2'>Candidate</p>
-                        <h1 className='text-2xl font-bold'>Login as a Candidate</h1>
+                        <h1 className='text-xl md:text-2xl font-bold'>Login as a Candidate</h1>
                     </div>
                     <p className='ms-auto flex items-center'>Get Started<ArrowRightIcon className='h-5 ml-2' /></p>
                 </button> :
-                <button onClick={() => setOpenModal(true)} className="theme-btn2 p-10 mb-2 w-1/2 text-white flex items-center mx-2" role="button">
+                <button onClick={() => setOpenModal(true)} className="theme-btn2 p-5 md:p-10 mb-2 w-full lg:w-1/2 text-white flex items-center lg:mx-2" role="button">
                     <UserIcon className='h-10' />
                     <div className='text-start ml-5'>
                         <p className='mb-2'>Employer</p>
-                        <h1 className='text-2xl font-bold'>Login as a Employer</h1>
+                        <h1 className='text-xl md:text-2xl font-bold'>Login as a Employer</h1>
                     </div>
                     <p className='ms-auto flex items-center'>Get Started<ArrowRightIcon className='h-5 ml-2' /></p>
                 </button>

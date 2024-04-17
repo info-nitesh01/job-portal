@@ -1,7 +1,6 @@
 'use client'
 
 import React from 'react'
-import { Breadcrumb } from "flowbite-react";
 import Link from 'next/link';
 import { ChevronRightIcon } from '@heroicons/react/16/solid';
 
