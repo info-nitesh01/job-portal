@@ -64,11 +64,11 @@ const jobCategory = [
 
 export default function JobCategory() {
     return (
-        <div className='p-12 px-28'>
+        <div className='p-12 lg:px-28'>
             <h1 className='text-4xl font-bold text-center mb-10'>Choose Your Desire Category</h1>
-            <div className='grid grid-cols-5'>
+            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5'>
                 {jobCategory.map((item, i) => {
-                    return <div key={i} className='border p-8 text-center hover:shadow-lg'>
+                    return <div key={i} className='border p-4 md:p-8 text-center hover:shadow-lg'>
                         {item.icon}
                         <h5 className="tracking-tight font-semibold text-gray-900 w-2/3 m-auto "> {item.categoryname} </h5>
                     </div>

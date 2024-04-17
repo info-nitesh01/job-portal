@@ -212,6 +212,10 @@ button[aria-selected="false"]:hover {
   color: #38a745;
 }
 
+button[data-testid="flowbite-navbar-toggle"] {
+  margin-left: 5px;
+}
+
 button[aria-selected="true"] {
   border-radius: 0;
   border: 0;
@@ -337,4 +341,17 @@ div[data-testid="timeline-point"] span svg {
   height: 20px;
   width: 20px;
   transform: rotate(45deg);
+}
+
+.react-pdf__Page__textContent {
+  display: none !important;
+}
+
+.react-pdf__Page {
+  min-width: 100% !important;
+}
+
+.react-pdf__Page__canvas {
+  width: 100% !important;
+  height: auto !important;
 }

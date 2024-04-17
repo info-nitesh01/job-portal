@@ -170,6 +170,7 @@
         "c0bd",
         "4cf1",
         "4cf1",
+        "4cf1",
         "4cf1"
       ],
       "logo": ""
@@ -188,6 +189,7 @@
       "jobtype": "Part Time",
       "jobdescription": "Ex sed mollit quo hi",
       "appliedCandidates": [
+        "4cf1",
         "4cf1",
         "4cf1",
         "4cf1",
@@ -275,6 +277,7 @@
       "appliedCandidates": [
         "4cf1",
         "4cf1",
+        "4cf1",
         "4cf1"
       ],
       "logo": ""
@@ -312,7 +315,10 @@
       "location": "28/A Street, New York City",
       "jobtype": "Full Time",
       "jobdescription": "Dignissimos aliquip ",
-      "appliedCandidates": [],
+      "appliedCandidates": [
+        "4cf1",
+        "4cf1"
+      ],
       "logo": ""
     },
     {
@@ -330,8 +336,26 @@
       "jobtype": "Part Time",
       "jobdescription": "Adipisci error asper",
       "appliedCandidates": [
-        "4cf1"
+        "4cf1",
+        "c0bd"
       ],
+      "logo": ""
+    },
+    {
+      "id": "46fe",
+      "employerID": "c0bd",
+      "jobtitle": "Shopify Developer",
+      "jobcategory": "Web Developer",
+      "email": "xipe@mailinator.com",
+      "companyname": "Mercer and William Plc",
+      "companydomain": "mailinator.com",
+      "vacancies": "1",
+      "minsal": "₹10000",
+      "maxsal": "₹20000",
+      "location": "28/A Street, Gandhinagar, Gujarat.",
+      "jobtype": "Full Time",
+      "jobdescription": "Unde velit velit u",
+      "appliedCandidates": [],
       "logo": ""
     }
   ]

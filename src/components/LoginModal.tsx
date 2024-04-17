@@ -36,6 +36,7 @@ export default function LoginModal(props: any) {
                         setshowToast({ toasttype: "warning", msg: "Not authorized to sign in as " + props.userType + "!" });
                         setemail("");
                         setpassword("");
+                        setOpenModal(false)
                     } else {
                         let data: any = { id: filteredApiData[0].id, name: filteredApiData[0].name, email: filteredApiData[0].email, usertype: filteredApiData[0].usertype }
                         setshowToast({ toasttype: "success", msg: "Logged in Successfully." })
@@ -59,19 +60,19 @@ export default function LoginModal(props: any) {
     return (
         <>
             {(props.userType === 'Candidate') ?
-                <button onClick={() => setOpenModal(true)} className="theme-btn2 p-10 mb-2 w-1/2 text-white flex items-center mx-2" role="button">
+                <button onClick={() => setOpenModal(true)} className="theme-btn2 p-5 md:p-10 mb-2 w-full lg:w-1/2 text-white flex items-center lg:mx-2" role="button">
                     <MagnifyingGlassIcon className='h-10' />
                     <div className='text-start ml-5'>
                         <p className='mb-2'>Candidate</p>
-                        <h1 className='text-2xl font-bold'>Login as a Candidate</h1>
+                        <h1 className='text-xl md:text-2xl font-bold'>Login as a Candidate</h1>
                     </div>
                     <p className='ms-auto flex items-center'>Get Started<ArrowRightIcon className='h-5 ml-2' /></p>
                 </button> :
-                <button onClick={() => setOpenModal(true)} className="theme-btn2 p-10 mb-2 w-1/2 text-white flex items-center mx-2" role="button">
+                <button onClick={() => setOpenModal(true)} className="theme-btn2 p-5 md:p-10 mb-2 w-full lg:w-1/2 text-white flex items-center lg:mx-2" role="button">
                     <UserIcon className='h-10' />
                     <div className='text-start ml-5'>
                         <p className='mb-2'>Employer</p>
-                        <h1 className='text-2xl font-bold'>Login as a Employer</h1>
+                        <h1 className='text-xl md:text-2xl font-bold'>Login as a Employer</h1>
                     </div>
                     <p className='ms-auto flex items-center'>Get Started<ArrowRightIcon className='h-5 ml-2' /></p>
                 </button>

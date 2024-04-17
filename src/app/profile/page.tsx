@@ -102,11 +102,11 @@ export default function PrfilePage() {
                 : <></>
             }
             <UserNav />
-            <div className="bg-theme-green text-center h-96 flex items-center flex-col justify-center">
+            <div className="bg-theme-green text-center h-96 flex items-center flex-col justify-center mb-10">
                 <h1 className='text-4xl font-extrabold text-white mb-6'>Profile</h1>
                 <Bcrumb prevpages={breadCrumbPages} lastPage="Profile" />
             </div>
-            <div className='border p-10 mx-24 mb-14'>
+            <div className='border p-5 md:p-10 mx-6 md:mx-12 lg:mx-24 mb-14'>
                 <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white mb-10"> Basic Information </h5>
                 <div className='flex items-center mb-10'>
                     <input type="file" id='cvUpload' className='hidden' onChange={(e: any) => { setfile(e.target.files?.[0]); setfileInputName(e.target.files?.[0].name) }} />
@@ -146,7 +146,7 @@ export default function PrfilePage() {
                     </div>
                 </div>
             </div>
-            <div className='border p-10 mx-24 mb-14'>
+            <div className='border p-5 md:p-10 mx-6 md:mx-12 lg:mx-24 mb-14'>
                 <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white mb-10"> Social Links </h5>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-5'>
                     <div>
@@ -167,7 +167,7 @@ export default function PrfilePage() {
                     </div>
                 </div>
             </div>
-            <div className='flex items-center my-10 mx-24'>
+            <div className='flex items-center my-10 mx-6 md:mx-12 lg:mx-24'>
                 <button onClick={handlesignup} className="theme-btn2 px-10 py-4 mb-2 w-fit text-white font-base flex text-lg items-center" role="button"> Save </button>
             </div>
             <FooterComponent />

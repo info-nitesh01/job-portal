@@ -38,29 +38,32 @@ export default function JobArea() {
         } else {
             router.push('/login')
         }
+        setTimeout(() => {
+            setshowToast({ toasttype: "", msg: "" });
+        }, 3000);
     }
 
     return (
-        <div className='p-12 px-28 text-center'>
+        <div className='p-12 lg:px-28 text-center'>
             {(showToast.toasttype !== "") ?
                 <ToastComponent toastType={showToast.toasttype} msg={showToast.msg} />
                 : <></>
             }
             <h1 className='text-4xl font-bold text-center'>Recent Jobs</h1>
-            <div className='grid grid-cols-2 mt-5'>
+            <div className='grid lg:grid-cols-2 gap-2 mt-5'>
                 {(data !== null && data !== undefined) ?
                     data.map((item: any, i: number) => {
                         return <Card key={i} className="rounded-none border-gray-300 p-3 m-auto mb-5 text-start" horizontal >
-                            <div className='grid grid-cols-5'>
-                                <img className='w-fit my-auto' src="https://templates.hibootstrap.com/gable/default/assets/img/home-1/jobs/1.png" alt="" />
-                                <div className='col-span-3 leading-10'>
+                            <div className='grid md:grid-cols-5 text-center md:text-start'>
+                                <img className='w-fit my-auto mx-auto md:ml-2' src="https://templates.hibootstrap.com/gable/default/assets/img/home-1/jobs/1.png" alt="" />
+                                <div className='md:col-span-3 leading-10'>
                                     <Link href="/job-details" className="text-xl font-bold tracking-tight text-gray-900"> {item.jobtitle} </Link>
                                     <p className='text-theme-green font-medium'>{item.companyname}</p>
                                     <p className='text-gray-500 text-sm font-medium flex items-center'><CurrencyDollarIcon className='mr-2 h-4 text-theme-green' />{item.minsal} - {item.maxsal}</p>
-                                    <p className='text-gray-500 text-sm font-medium flex items-start'><MapPinIcon className='mr-2 h-5 text-theme-green' />Location 210-27 Quadra, Market Street, Victoria Canada
+                                    <p className='text-gray-500 text-sm font-medium flex items-start text-start'><MapPinIcon className='mr-2 h-10 md:h-5 text-theme-green' />Location 210-27 Quadra, Market Street, Victoria Canada
                                     </p>
                                 </div>
-                                <div className='flex flex-col justify-center'>
+                                <div className='flex flex-col justify-center mt-2 md:mt-0'>
                                     <button className="common-btn px-5 py-2 mb-2" role="button" onClick={() => handleJobApply(item.id)}><span id={`btnApply${item.id}`}>Apply</span></button>
                                     <p className="theme-btn2 px-4 py-2 text-white text-center" role="button">{item.jobtype}</p>
                                 </div>
