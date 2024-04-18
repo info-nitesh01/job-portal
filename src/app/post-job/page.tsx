@@ -27,7 +27,10 @@ export default function PostJobPage() {
     const [currency, setcurrency] = useState("$")
     const dispatch = useDispatch<any>();
     const router = useRouter()
-    let localData: any = localStorage.getItem('userdata')
+
+    let localData: any;
+    if (typeof window !== 'undefined') { localData = localStorage.getItem('userdata') }
+
     const handlePostJob = () => {
         let postJobData = {
             "employerID": JSON.parse(localData).id,
