@@ -51,13 +51,19 @@ export default function UserNav() {
                     <Navbar.Toggle />
                 </div>
             }
-            <Navbar.Collapse className="text-center">
-                <Navbar.Link><Link className={`nav ${pathname == "/" ? "active" : ""} text-base mx-2 text-black`} href="/"> Home </Link> </Navbar.Link>
-                <Navbar.Link><Link href="/job-list" className={`nav ${pathname == "/job-list" ? "active" : ""} text-base mx-2 text-black`} > All Jobs </Link></Navbar.Link>
-                <Navbar.Link><Link href="/services" className={`nav ${pathname == "/services" ? "active" : ""} text-base mx-2 text-black`} > Services </Link></Navbar.Link>
-                <Navbar.Link><Link href="/pricing" className={`nav ${pathname == "/pricing" ? "active" : ""} text-base mx-2 text-black`} > Pricing </Link></Navbar.Link>
-                <Navbar.Link><Link href="/contact" className={`nav ${pathname == "/contact" ? "active" : ""} text-base mx-2 text-black`} > Contact </Link></Navbar.Link>
-            </Navbar.Collapse>
+            {(userData !== null && userData !== undefined) ?
+                <Navbar.Collapse className="text-center">
+                    <Navbar.Link><Link className={`nav ${pathname == "/" ? "active" : ""} text-base mx-2 text-black`} href="/"> Home </Link> </Navbar.Link>
+                    {(userData.usertype === "candidate") ?
+                        <Navbar.Link><Link href="/job-list" className={`nav ${pathname == "/job-list" ? "active" : ""} text-base mx-2 text-black`} > All Jobs </Link></Navbar.Link>
+                        :
+                        <Navbar.Link><Link href="/posted-jobs" className={`nav ${pathname == "/posted-jobs" ? "active" : ""} text-base mx-2 text-black`} > Posted Jobs </Link></Navbar.Link>
+                    }
+                    <Navbar.Link><Link href="/services" className={`nav ${pathname == "/services" ? "active" : ""} text-base mx-2 text-black`} > Services </Link></Navbar.Link>
+                    <Navbar.Link><Link href="/pricing" className={`nav ${pathname == "/pricing" ? "active" : ""} text-base mx-2 text-black`} > Pricing </Link></Navbar.Link>
+                    <Navbar.Link><Link href="/contact" className={`nav ${pathname == "/contact" ? "active" : ""} text-base mx-2 text-black`} > Contact </Link></Navbar.Link>
+                </Navbar.Collapse>
+                : <></>}
             {/* <div>
                 <Link className={`nav ${pathname == "/" ? "active" : ""} text-base mx-2 text-black`} href="/"> Home </Link>
                 <Link href="/job-list" className={`nav ${pathname == "/job-list" ? "active" : ""} text-base mx-2 text-black`} > All Jobs </Link>

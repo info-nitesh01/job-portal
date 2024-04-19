@@ -11,7 +11,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { BsFacebook, BsLinkedin, BsInstagram, BsTwitter } from "react-icons/bs";
 import UserTimeline from "@/components/UserTimeline";
-import ViewCVModal from "@/components/ViewCVModal";
+// import ViewCVModal from "@/components/ViewCVModal";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 
 const breadCrumbPages: any = [{ page: "Home", link: "/" }];
@@ -62,7 +62,7 @@ export default function JobList() {
                                         <h1 className='text-4xl font-extrabold text-gray-800 mb-4 w-full'>{item.name}</h1>
                                         <h1 className='text-lg font-medium text-gray-400 mb-2 w-full'>{item.jobtitle}</h1>
                                         <h1 className='text-gray-500 mb-2 w-full'>Bachelor of Business Administation university of Gable</h1>
-                                        <ViewCVModal userid={item.id} />
+                                        {/* <ViewCVModal userid={item.id} /> */}
                                         <label onClick={() => handleDownloadCV(item.cv)} className="common-btn-2 mx-2 font-semibold px-10 py-3"><span className="text flex items-center">Download CV<ArrowDownTrayIcon className="h-5 rounded-sm ml-2" /></span></label>
                                     </div>
                                     <div key={id} className='grid grid-cols-1 md:grid-cols-12 mx-5 lg:mx-24 lg:my-20'>

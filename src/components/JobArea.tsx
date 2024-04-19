@@ -25,7 +25,7 @@ export default function JobArea() {
     }, [])
 
     let data;
-    if (jobList !== null) { data = jobList.slice(-4) }
+    if (jobList !== null && jobList !== undefined) { data = jobList.slice(-4) }
     const handleJobApply = (id: string) => {
         if (userData !== undefined && userData !== null) {
             let curentBtn = document.getElementById(`btnApply${id}`);
