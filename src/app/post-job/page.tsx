@@ -5,7 +5,7 @@ import FooterComponent from '@/components/FooterComponent'
 import ToastComponent from '@/components/ToastComponent'
 import UserNav from '@/components/UserNav'
 import { Label, Radio, TextInput, Textarea } from 'flowbite-react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { postData } from '../store/api/apiSlice'
 import { useRouter } from 'next/navigation'
@@ -27,9 +27,11 @@ export default function PostJobPage() {
     const [currency, setcurrency] = useState("$")
     const dispatch = useDispatch<any>();
     const router = useRouter()
+    const [localData, setlocalData]: any = useState()
 
-    let localData: any;
-    if (typeof window !== 'undefined') { localData = localStorage.getItem('userdata') }
+    useEffect(() => {
+        setlocalData(localStorage.getItem('userdata'));
+    }, [])
 
     const handlePostJob = () => {
         let postJobData = {

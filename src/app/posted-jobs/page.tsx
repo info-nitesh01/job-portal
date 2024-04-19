@@ -18,14 +18,15 @@ export default function PostedJobList() {
     const dispatch = useDispatch<any>();
     const state: any = useSelector((state) => state);
     const [jobList, setjobList] = useState([])
-    let userData: any;
-    if (typeof window !== 'undefined') { userData = localStorage.getItem('userdata') }
+    const [userData, setuserData]: any = useState()
+
     useEffect(() => {
         (async () => {
             const jobs = await dispatch(fetchData("/jobList"));
             setjobList(jobs.payload);
             setLoading(false);
         })();
+        setuserData(localStorage.getItem('userdata'));
     }, [])
 
     let filteredApiData;

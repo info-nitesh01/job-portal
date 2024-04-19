@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from 'react-redux'
 const breadCrumbPages: any = [{ page: "Home", link: "/" }];
 
 
-export default function SugnupPage() {
+export default function SignupPage() {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
     const [loading, setLoading] = useState(true);
     const [fullName, setfullName] = useState("");
