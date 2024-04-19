@@ -14,17 +14,18 @@ export default function JobArea() {
     const router = useRouter()
     const dispatch = useDispatch<any>();
     const [jobList, setjobList] = useState([])
+    const [userData, setuserData]: any = useState()
 
     useEffect(() => {
         (async () => {
             const jobs = await dispatch(fetchData("/jobList"));
             setjobList(jobs.payload);
         })();
+        setuserData(localStorage.getItem('userdata'));
     }, [])
 
     let data;
     if (jobList !== null) { data = jobList.slice(-4) }
-    let userData: any = localStorage.getItem("userdata");
     const handleJobApply = (id: string) => {
         if (userData !== undefined && userData !== null) {
             let curentBtn = document.getElementById(`btnApply${id}`);
