@@ -16,7 +16,7 @@ export default function JobID({ params }: { params: { jobId: string } }) {
     const [loading, setLoading] = useState(true);
     const [jobList, setjobList] = useState([])
     const [userList, setuserList] = useState([])
-    let userData: any = localStorage.getItem('userdata')
+    const [userData, setuserData]: any = useState()
 
     useEffect(() => {
         (async () => {
@@ -24,10 +24,9 @@ export default function JobID({ params }: { params: { jobId: string } }) {
             setjobList(jobs.payload);
             const users = await dispatch(fetchData("/users"));
             setuserList(users.payload);
-            setTimeout(() => {
-                setLoading(false);
-            }, 1000);
+            setLoading(false);
         })();
+        setuserData(localStorage.getItem('userdata'));
     }, [])
 
     let filteredApiData = jobList.filter((item: any) => { return item.id === params.jobId });

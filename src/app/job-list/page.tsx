@@ -21,12 +21,14 @@ export default function JobList() {
     const [jobList, setjobList] = useState([])
     const router = useRouter()
     const [loading, setLoading] = useState(true);
+    const [userData, setuserData]: any = useState()
 
     useEffect(() => {
         (async () => {
             const jobs = await dispatch(fetchData("/jobList"));
             setjobList(jobs.payload);
             setLoading(false)
+            setuserData(localStorage.getItem('userdata'));
         })();
     }, [])
 
@@ -36,9 +38,6 @@ export default function JobList() {
         let arrayForSort = [...jobList]
         recentJobData = arrayForSort.reverse();
     }
-
-    let userData: any;
-    if (typeof window !== 'undefined') { userData = localStorage.getItem('userdata') }
 
     const handleJobApply = (id: string) => {
         if (userData !== undefined && userData !== null) {
