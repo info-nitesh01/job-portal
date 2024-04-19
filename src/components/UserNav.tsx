@@ -5,17 +5,23 @@ import { PlusCircleIcon, UserIcon } from "@heroicons/react/16/solid";
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function UserNav() {
     const pathname = usePathname();
+    const [userData, setuserData]: any = useState()
+
+    useEffect(() => {
+        setuserData(JSON.parse(localStorage.getItem('userdata') as any));
+    }, [])
+
     const [defaultProf, setdefaultProf] = useState("https://pngset.com/images/default-profile-picture-circle-symbol-logo-trademark-number-transparent-png-890174.png")
-    let userData: any = localStorage.getItem('userdata');
-    let uData = JSON.parse(userData)
     const router = useRouter()
 
     const handleSignout = () => {
-        localStorage.removeItem('userdata');
+        if (typeof window !== 'undefined') {
+            localStorage.removeItem('userdata');
+        }
         router.push('/login')
     }
     return (
@@ -23,13 +29,13 @@ export default function UserNav() {
             <Link href="/">
                 <img src="https://templates.hibootstrap.com/gable/default/assets/img/logo.png" className="mr-3 h-12" alt="Flowbite React Logo" />
             </Link>
-            {(userData !== null) ?
+            {(userData !== null && userData !== undefined) ?
                 <div className="flex md:order-2">
-                    <Dropdown arrowIcon={false} inline label={<><Avatar alt="User settings" className="border-2 rounded-full border-theme-green" img={defaultProf} rounded /><span className="block ml-1 text-lg font-semibold">{uData.name}</span></>} >
+                    <Dropdown arrowIcon={false} inline label={<><Avatar alt="User settings" className="border-2 rounded-full border-theme-green" img={defaultProf} rounded /><span className="block ml-1 text-lg font-semibold">{userData.name}</span></>} >
                         <Dropdown.Header className="text-center">
                             <img className="h-14 m-auto rounded-full border-2 border-theme-green" src={defaultProf} alt="" />
-                            <span className="block ml-1 text-lg font-semibold">{uData.name}</span>
-                            <span className="block truncate text-sm font-medium">{uData.email}</span>
+                            <span className="block ml-1 text-lg font-semibold">{userData.name}</span>
+                            <span className="block truncate text-sm font-medium">{userData.email}</span>
                         </Dropdown.Header>
                         <Dropdown.Item><Link href={"/profile"}>Profile</Link ></Dropdown.Item>
                         <Dropdown.Item>Settings</Dropdown.Item>
