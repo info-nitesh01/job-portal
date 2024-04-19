@@ -343,19 +343,6 @@ div[data-testid="timeline-point"] span svg {
   transform: rotate(45deg);
 }
 
-.react-pdf__Page__textContent {
-  display: none !important;
-}
-
-.react-pdf__Page {
-  min-width: 100% !important;
-}
-
-.react-pdf__Page__canvas {
-  width: 100% !important;
-  height: auto !important;
-}
-
 /* Loader */
 .loader {
   width: 20px;
