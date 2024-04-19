@@ -11,8 +11,6 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { BsFacebook, BsLinkedin, BsInstagram, BsTwitter } from "react-icons/bs";
 import UserTimeline from "@/components/UserTimeline";
-// import ViewCVModal from "@/components/ViewCVModal";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 
 const breadCrumbPages: any = [{ page: "Home", link: "/" }];
 
