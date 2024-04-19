@@ -3,16 +3,12 @@
 
 import { fetchData } from "@/app/store/api/apiSlice";
 import { EyeIcon } from "@heroicons/react/16/solid";
-import { Button, Modal } from "flowbite-react";
+import { Modal } from "flowbite-react";
 import { useEffect, useState } from "react";
-import { Document, Page, pdfjs } from 'react-pdf'
 import { useDispatch, useSelector } from "react-redux";
-pdfjs.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-
 
 export default function ViewCVModal(props: any) {
     const [openModal, setOpenModal] = useState(false);
-    const [width, setWidth] = useState(1000);
     const dispatch = useDispatch<any>();
     const state: any = useSelector((state) => state);
 
@@ -32,9 +28,6 @@ export default function ViewCVModal(props: any) {
             <Modal show={openModal} size="6xl" onClose={() => setOpenModal(false)}>
                 <Modal.Header className="bg-theme-green text-white viewcv-modal"><span className="text-white">{filteredApiData[0].name}</span></Modal.Header>
                 <Modal.Body>
-                    <Document file={`http://localhost:3000/${filteredApiData[0].cv}`} >
-                        <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
-                    </Document>
                 </Modal.Body>
             </Modal>
         </>
