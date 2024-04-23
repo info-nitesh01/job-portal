@@ -29,7 +29,7 @@ export default function JobArea() {
     const handleJobApply = (id: string) => {
         if (userData !== undefined && userData !== null) {
             let curentBtn = document.getElementById(`btnApply${id}`);
-            let filteredApiData = jobList.filter((item: any) => { return item.id === id })
+            let filteredApiData: any = jobList.filter((item: any) => { return item.id === id })
             let newData = JSON.parse(JSON.stringify(filteredApiData[0]));
             console.log(newData);
             newData.appliedCandidates.push(JSON.parse(userData).id);

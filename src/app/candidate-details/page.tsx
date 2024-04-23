@@ -8,13 +8,12 @@ import { useEffect, useState } from "react";
 import { fetchData } from "../store/api/apiSlice";
 import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
-import { useSearchParams } from "next/navigation";
 import { BsFacebook, BsLinkedin, BsInstagram, BsTwitter } from "react-icons/bs";
 import UserTimeline from "@/components/UserTimeline";
 
 const breadCrumbPages: any = [{ page: "Home", link: "/" }];
 
-export default function JobList() {
+export default function JobList(searchParams: any) {
     const [loading, setLoading] = useState(true);
     const dispatch = useDispatch<any>();
     const state: any = useSelector((state) => state);
@@ -26,13 +25,10 @@ export default function JobList() {
         }, 1500);
     }, [])
 
-    const searchParams = useSearchParams()
-    const userID = searchParams.get('id')
-
     let userListData: any = state.apiData.data;
     let filteredApiData: any;
     if (userListData !== null && userListData !== undefined) {
-        filteredApiData = userListData.filter((item: any) => { return item.id === userID });
+        filteredApiData = userListData.filter((item: any) => { return item.id === searchParams.searchParams.id });
     }
 
     const handleDownloadCV = (fileName: string) => {
