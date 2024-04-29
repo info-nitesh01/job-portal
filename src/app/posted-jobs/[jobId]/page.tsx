@@ -3,11 +3,12 @@
 import Bcrumb from "@/components/Bcrumb";
 import FooterComponent from "@/components/FooterComponent";
 import UserNav from "@/components/UserNav";
-import { ArrowRightIcon, MapPinIcon } from "@heroicons/react/16/solid";
+import { ArrowRightIcon } from "@heroicons/react/16/solid";
 import { useEffect, useState } from "react";
 import { fetchData } from "../../store/api/apiSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Link from "next/link";
+import Image from "next/image";
 
 const breadCrumbPages: any = [{ page: "Home", link: "/" }, { page: "Posted Jobs", link: "/posted-jobs" }];
 
@@ -37,8 +38,6 @@ export default function JobID({ params }: { params: { jobId: string } }) {
             return newData.appliedCandidates.includes(user.id);
         });
     }
-    console.log(filteredCandidates);
-
 
     return (
         <>
@@ -58,7 +57,7 @@ export default function JobID({ params }: { params: { jobId: string } }) {
                                         (filteredCandidates.length > 0) ?
                                             filteredCandidates.map((item: any, i: number) => {
                                                 return <div key={i} className="rounded-none border-gray-300 shadow-md relative m-auto mb-20 p-0">
-                                                    <img className="w-full" src={item.profile} alt="" />
+                                                    <Image height={400} width={200} className="w-full h-full" src={item.profile} alt="" />
                                                     <div className="bg-white absolute shadow-sm -bottom-12 w-11/12 hover:w-full transition-all -mt-14 p-3">
                                                         <h1 className="font-semibold mb-1">{item.name}</h1>
                                                         <h1 className="text-sm font-medium text-gray-400 mb-1">{item.jobtitle}</h1>
@@ -67,13 +66,13 @@ export default function JobID({ params }: { params: { jobId: string } }) {
                                                 </div>
                                             }
                                             ) :
-                                            <img className="col-span-4 w-1/3 m-auto my-10" src="/assets/images/no-data.png" alt="" />
+                                            <Image height={300} width={300} className="col-span-4 w-1/3 m-auto my-10" src="/assets/images/no-data.png" alt="" />
                                         : <></>
                                     }
                                 </div>
                                 <FooterComponent />
                             </> :
-                            <img className="col-span-4 w-1/3 m-auto my-10" src="/assets/images/unauthorized-user.png" alt="" />
+                            <Image height={300} width={300} className="col-span-4 w-1/3 m-auto my-10" src="/assets/images/unauthorized-user.png" alt="" />
                         }
                     </div>
                 </>

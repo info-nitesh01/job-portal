@@ -1,9 +1,7 @@
 'use client'
 
 import { BanknotesIcon, CubeIcon } from '@heroicons/react/16/solid'
-import { ComputerDesktopIcon, FireIcon, RectangleGroupIcon, SunIcon, TruckIcon } from '@heroicons/react/24/outline'
-import { ChartBarIcon } from '@heroicons/react/24/outline'
-import { Cog8ToothIcon, HomeIcon } from '@heroicons/react/24/outline'
+import { Cog8ToothIcon, HomeIcon, ComputerDesktopIcon, FireIcon, RectangleGroupIcon, SunIcon, TruckIcon, ChartBarIcon } from '@heroicons/react/24/outline'
 import React from 'react'
 
 const jobCategory = [
@@ -57,9 +55,6 @@ const jobCategory = [
         type: 'homedelivery',
         icon: <><TruckIcon className='h-12 p-3 m-auto rounded-lg mb-5' style={{ backgroundColor: '#d0e6d2', color: '#116e18' }} /></>
     },
-
-
-
 ]
 
 export default function JobCategory() {

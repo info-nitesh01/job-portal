@@ -19,8 +19,8 @@ export default function LoginModal(props: any) {
     const [showToast, setshowToast] = useState({ toasttype: "", msg: "" })
     const router = useRouter()
 
-
     const handleLogin = () => {
+        console.log(login)
         fetch(apiUrl + '/users')
             .then(response => response.json())
             .then(users => {

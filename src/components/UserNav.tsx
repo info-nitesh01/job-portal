@@ -3,6 +3,7 @@
 
 import { PlusCircleIcon, UserIcon } from "@heroicons/react/16/solid";
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -15,7 +16,6 @@ export default function UserNav() {
         setuserData(JSON.parse(localStorage.getItem('userdata') as any));
     }, [])
 
-    const [defaultProf, setdefaultProf] = useState("https://pngset.com/images/default-profile-picture-circle-symbol-logo-trademark-number-transparent-png-890174.png")
     const router = useRouter()
 
     const handleSignout = () => {
@@ -27,13 +27,13 @@ export default function UserNav() {
     return (
         <Navbar fluid rounded className="px-5 lg:px-24 py-5 shadow-md">
             <Link href="/">
-                <img src="https://templates.hibootstrap.com/gable/default/assets/img/logo.png" className="mr-3 h-12" alt="Flowbite React Logo" />
+                <Image height={100} width={100} src="https://templates.hibootstrap.com/gable/default/assets/img/logo.png" className="mr-3 h-12 w-auto" alt="Flowbite React Logo" />
             </Link>
             {(userData !== null && userData !== undefined) ?
                 <div className="flex md:order-2">
-                    <Dropdown arrowIcon={false} inline label={<><Avatar alt="User settings" className="border-2 rounded-full border-theme-green" img={defaultProf} rounded /><span className="block ml-1 text-lg font-semibold">{userData.name}</span></>} >
+                    <Dropdown arrowIcon={false} inline label={<><Avatar alt="User settings" className="border-2 rounded-full border-theme-green" img="https://pngset.com/images/default-profile-picture-circle-symbol-logo-trademark-number-transparent-png-890174.png" rounded /><span className="block ml-1 text-lg font-semibold">{userData.name}</span></>} >
                         <Dropdown.Header className="text-center">
-                            <img className="h-14 m-auto rounded-full border-2 border-theme-green" src={defaultProf} alt="" />
+                            <Image className="h-14 w-14 m-auto rounded-full border-2 border-theme-green" src="https://pngset.com/images/default-profile-picture-circle-symbol-logo-trademark-number-transparent-png-890174.png" alt="" height={50} width={50} />
                             <span className="block ml-1 text-lg font-semibold">{userData.name}</span>
                             <span className="block truncate text-sm font-medium">{userData.email}</span>
                         </Dropdown.Header>
@@ -63,7 +63,14 @@ export default function UserNav() {
                     <Navbar.Link><Link href="/pricing" className={`nav ${pathname == "/pricing" ? "active" : ""} text-base mx-2 text-black`} > Pricing </Link></Navbar.Link>
                     <Navbar.Link><Link href="/contact" className={`nav ${pathname == "/contact" ? "active" : ""} text-base mx-2 text-black`} > Contact </Link></Navbar.Link>
                 </Navbar.Collapse>
-                : <></>}
+                : <>
+                    <Navbar.Collapse className="text-center">
+                        <Navbar.Link><Link className={`nav ${pathname == "/" ? "active" : ""} text-base mx-2 text-black`} href="/"> Home </Link> </Navbar.Link>
+                        <Navbar.Link><Link href="/login" className={`nav ${pathname == "/job-list" ? "active" : ""} text-base mx-2 text-black`} > All Jobs </Link></Navbar.Link>
+                        <Navbar.Link><Link href="/services" className={`nav ${pathname == "/services" ? "active" : ""} text-base mx-2 text-black`} > Services </Link></Navbar.Link>
+                        <Navbar.Link><Link href="/pricing" className={`nav ${pathname == "/pricing" ? "active" : ""} text-base mx-2 text-black`} > Pricing </Link></Navbar.Link>
+                        <Navbar.Link><Link href="/contact" className={`nav ${pathname == "/contact" ? "active" : ""} text-base mx-2 text-black`} > Contact </Link></Navbar.Link>
+                    </Navbar.Collapse></>}
             {/* <div>
                 <Link className={`nav ${pathname == "/" ? "active" : ""} text-base mx-2 text-black`} href="/"> Home </Link>
                 <Link href="/job-list" className={`nav ${pathname == "/job-list" ? "active" : ""} text-base mx-2 text-black`} > All Jobs </Link>

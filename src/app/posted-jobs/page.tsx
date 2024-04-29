@@ -8,15 +8,15 @@ import { CurrencyDollarIcon, PlusIcon } from "@heroicons/react/20/solid";
 import { Card } from "flowbite-react";
 import { useEffect, useState } from "react";
 import { fetchData } from "../store/api/apiSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Link from "next/link";
+import Image from "next/image";
 
 const breadCrumbPages: any = [{ page: "Home", link: "/" }];
 
 export default function PostedJobList() {
     const [loading, setLoading] = useState(true);
     const dispatch = useDispatch<any>();
-    const state: any = useSelector((state) => state);
     const [jobList, setjobList] = useState([])
     const [userData, setuserData]: any = useState()
 
@@ -52,7 +52,7 @@ export default function PostedJobList() {
                                         filteredApiData.map((item: any, i: number) => {
                                             return <Card key={i} className="rounded-none text-start border-gray-300 m-auto mb-5" horizontal >
                                                 <div className='grid grid-cols-6 text-center md:text-start'>
-                                                    <img className='w-fit my-auto col-span-6 md:col-span-1 mx-auto' src="https://templates.hibootstrap.com/gable/default/assets/img/home-1/jobs/1.png" alt="" />
+                                                    <Image height={100} width={100} className='w-fit my-auto col-span-6 md:col-span-1 mx-auto' src="https://templates.hibootstrap.com/gable/default/assets/img/home-1/jobs/1.png" alt="" />
                                                     <div className='col-span-6 md:col-span-3 leading-10'>
                                                         <Link href="/job-details" className="text-xl font-bold tracking-tight text-gray-900"> {item.jobtitle} </Link>
                                                         <p className='text-theme-green font-medium'>{item.companyname}</p>
@@ -74,7 +74,7 @@ export default function PostedJobList() {
                                 <FooterComponent />
                             </>
                             :
-                            <img className="col-span-4 w-1/3 m-auto my-10" src="/assets/images/unauthorized-user.png" alt="" />
+                            <Image height={200} width={200} className="col-span-4 w-1/3 m-auto my-10" src="/assets/images/unauthorized-user.png" alt="" />
                         }
                     </div>
                 </>

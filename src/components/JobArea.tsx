@@ -6,8 +6,9 @@ import { Card } from 'flowbite-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import ToastComponent from './ToastComponent'
+import Image from 'next/image'
 
 export default function JobArea() {
     const [showToast, setshowToast] = useState({ toasttype: "", msg: "" })
@@ -56,7 +57,7 @@ export default function JobArea() {
                     data.map((item: any, i: number) => {
                         return <Card key={i} className="rounded-none border-gray-300 p-3 m-auto mb-5 text-start" horizontal >
                             <div className='grid md:grid-cols-5 text-center md:text-start'>
-                                <img className='w-fit my-auto mx-auto md:ml-2' src="https://templates.hibootstrap.com/gable/default/assets/img/home-1/jobs/1.png" alt="" />
+                                <Image height={100} width={100} className='w-fit my-auto mx-auto md:ml-2' src="https://templates.hibootstrap.com/gable/default/assets/img/home-1/jobs/1.png" alt="" />
                                 <div className='md:col-span-3 leading-10'>
                                     <Link href="/job-details" className="text-xl font-bold tracking-tight text-gray-900"> {item.jobtitle} </Link>
                                     <p className='text-theme-green font-medium'>{item.companyname}</p>

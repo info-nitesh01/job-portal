@@ -9,4 +9,4 @@ export function Providers({ children }) {
             {children}
         </Provider>
     )
-} 
+}

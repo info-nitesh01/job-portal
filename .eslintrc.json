@@ -1,0 +1,28 @@
+{
+    "extends": "next/core-web-vitals",
+    "rules": {
+        "no-duplicate-imports": "warn",
+        "eqeqeq": "off",
+        "no-undef": "error",
+        "no-unused-vars": "error",
+        "no-var": "warn",
+        "no-extra-semi": "error",
+        "quotes": "off",
+        "no-undef-init": "warn",
+        "no-empty": "error",
+        "no-constant-condition": "error",
+        "no-warning-comments": "warn",
+        "no-multi-spaces": "warn",
+        "no-trailing-spaces": "warn",
+        "react-hooks/exhaustive-deps": "off",
+        "no-multiple-empty-lines": [
+            "error",
+            {
+                "max": 1
+            }
+        ]
+    },
+    "globals": {
+        "NodeJS": "readonly"
+    }
+}

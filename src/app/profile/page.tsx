@@ -6,11 +6,10 @@ import ToastComponent from '@/components/ToastComponent'
 import UserNav from '@/components/UserNav'
 import { Label, Radio, TextInput } from 'flowbite-react'
 import React, { useEffect, useState } from 'react'
-import { fetchData, postData } from '../store/api/apiSlice'
+import { fetchData } from '../store/api/apiSlice'
 import { useDispatch, useSelector } from 'react-redux'
 
 const breadCrumbPages: any = [{ page: "Home", link: "/" }];
-
 
 export default function PrfilePage() {
     const [loading, setLoading] = useState(true);
@@ -46,6 +45,7 @@ export default function PrfilePage() {
             .then(allUsers => {
                 setallUsersData(allUsers);
                 let currentUserData = allUsers.filter((item: any) => { return item.id === currentUser.id })
+                // console.log(currentUserData)
                 setcurrentUserindex(allUsers.findIndex((item: any) => item.id === currentUser.id));
                 setfileInputName(currentUserData[0].cv);
                 setfullName(currentUserData[0].name);
@@ -59,11 +59,12 @@ export default function PrfilePage() {
                 setinstalink(currentUserData[0].instaLink);
                 setldLink(currentUserData[0].ldLink);
                 setdribblelink(currentUserData[0].dribblelink);
+                setuserType(currentUserData[0].usertype)
             })
         setLoading(false);
     }, [])
 
-
+    console.log(allUsersData, file, currentUserindex)
     let handlesignup = async () => {
         setshowToast({ toasttype: "success", msg: "Signed Up Successfully." })
 

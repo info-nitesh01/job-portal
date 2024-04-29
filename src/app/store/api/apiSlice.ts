@@ -7,7 +7,6 @@ interface ApiState {
     isError: boolean;
 }
 
-
 // Get
 export const fetchData = createAsyncThunk('fetchData', async (dbName: string) => {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -70,7 +69,6 @@ const apiSlice = createSlice({
             console.error("Error", action.error);
         });
 
-
         // API Fetching (POST) is pending
         builder.addCase(postData.pending, (state) => {
             state.isLoading = true;
@@ -85,7 +83,6 @@ const apiSlice = createSlice({
             state.isError = true;
             console.error("Error", action.error);
         });
-
 
         // API Fetching (PUT) is pending
         builder.addCase(updateData.pending, (state) => {

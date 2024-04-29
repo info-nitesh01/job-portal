@@ -9,6 +9,7 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { postData } from '../store/api/apiSlice'
 import { useRouter } from 'next/navigation'
+import Image from 'next/image'
 
 const breadCrumbPages: any = [{ page: "Home", link: "/" }];
 export default function PostJobPage() {
@@ -149,7 +150,7 @@ export default function PostJobPage() {
                     <FooterComponent />
                 </>
                 :
-                <img className="col-span-4 w-1/3 m-auto my-10" src="/assets/images/unauthorized-user.png" alt="" />
+                <Image height={200} width={200} className="col-span-4 w-1/3 m-auto my-10" src="/assets/images/unauthorized-user.png" alt="" />
             }
         </>
     )

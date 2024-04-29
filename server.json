@@ -143,6 +143,23 @@
       "instaLink": "https://www.instagram.com/",
       "dribblelink": "https://www.dribble.com/",
       "ldLink": "https://www.linkedin.com/"
+    },
+    {
+      "id": "70a8",
+      "name": "Ajay Patel",
+      "cv": "INVITATION.docx",
+      "email": "abs@gmail.com",
+      "usertype": "candidate",
+      "password": "123123",
+      "dateofbirth": "2004-02-14",
+      "phone": "9099934344",
+      "jobtitle": "",
+      "address": "",
+      "gender": "Female",
+      "facebookLink": "",
+      "instaLink": "",
+      "dribblelink": "",
+      "ldLink": ""
     }
   ],
   "jobList": [
@@ -168,6 +185,9 @@
         "c0bd",
         "c0bd",
         "c0bd",
+        "4cf1",
+        "4cf1",
+        "4cf1",
         "4cf1",
         "4cf1",
         "4cf1",
@@ -235,6 +255,7 @@
         "4cf1",
         "4cf1",
         "4cf1",
+        "4cf1",
         "4cf1"
       ],
       "logo": ""
@@ -297,6 +318,7 @@
       "jobtype": "Full Time",
       "jobdescription": "Quibusdam enim labor Quibusdam enim labor Quibusdam enim labor Quibusdam enim labor Quibusdam enim labor Quibusdam enim labor Quibusdam enim labor Quibusdam enim labor",
       "appliedCandidates": [
+        "4cf1",
         "4cf1"
       ],
       "logo": ""
@@ -358,6 +380,42 @@
       "jobtype": "Full Time",
       "jobdescription": "Unde velit velit u",
       "appliedCandidates": [],
+      "logo": ""
+    },
+    {
+      "id": "ff6a",
+      "employerID": "c0bd",
+      "jobtitle": "Backend Dev",
+      "jobcategory": "Web Developer",
+      "email": "dyhoximu@mailinator.com",
+      "companyname": "Arnold and Melton Traders",
+      "companydomain": "mailinator.com",
+      "vacancies": "Sed unde ut consequu",
+      "minsal": "₹10000",
+      "maxsal": "₹40000",
+      "location": "Ut corrupti velit ",
+      "jobtype": "Part Time",
+      "jobdescription": "Aliquip illo delectu",
+      "appliedCandidates": [],
+      "logo": ""
+    },
+    {
+      "id": "8674",
+      "employerID": "c0bd",
+      "jobtitle": "front End",
+      "jobcategory": "Web Developer",
+      "email": "tedygeweb@mailinator.com",
+      "companyname": "Cross Ray Traders",
+      "companydomain": "mailinator.com",
+      "vacancies": "Voluptates itaque pe",
+      "minsal": "₹20000",
+      "maxsal": "₹30000",
+      "location": "Elit irure neque ad",
+      "jobtype": "Full Time",
+      "jobdescription": "Soluta elit Nam exe",
+      "appliedCandidates": [
+        "70a8"
+      ],
       "logo": ""
     }
   ]

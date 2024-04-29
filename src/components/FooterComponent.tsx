@@ -3,6 +3,7 @@
 
 import { ChevronRightIcon, InboxArrowDownIcon, MapPinIcon, MinusIcon, PhoneIcon } from "@heroicons/react/16/solid";
 import { Footer } from "flowbite-react";
+import Image from "next/image";
 import Link from "next/link";
 import { BsDribbble, BsFacebook, BsGithub, BsInstagram, BsTwitter } from "react-icons/bs";
 
@@ -13,7 +14,7 @@ export default function FooterComponent() {
                 <div className="grid w-full grid-cols-1 gap-8 px-6 py-8 md:grid-cols-4">
                     <div>
                         <Link href="/">
-                            <img src="https://templates.hibootstrap.com/gable/default/assets/img/logo-two.png" className="mx-auto md:ml-0 h-14 mb-5" alt="Flowbite React Logo" />
+                            <Image height={100} width={100} src="https://templates.hibootstrap.com/gable/default/assets/img/logo-two.png" className="mx-auto w-auto md:ml-0 h-14 mb-5" alt="Flowbite React Logo" />
                         </Link>
                         <Footer.LinkGroup col className="text-white">
                             <p className="leading-7 text-base">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>

@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 import { BsFacebook, BsLinkedin, BsInstagram, BsTwitter } from "react-icons/bs";
 import UserTimeline from "@/components/UserTimeline";
+import Image from "next/image";
 
 const breadCrumbPages: any = [{ page: "Home", link: "/" }];
 
@@ -17,9 +18,10 @@ export default function JobList(searchParams: any) {
     const [loading, setLoading] = useState(true);
     const dispatch = useDispatch<any>();
     const state: any = useSelector((state) => state);
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
     useEffect(() => {
-        dispatch(fetchData("/users"))
+        dispatch(fetchData("/users"));
         setTimeout(() => {
             setLoading(false);
         }, 1500);
@@ -32,7 +34,7 @@ export default function JobList(searchParams: any) {
     }
 
     const handleDownloadCV = (fileName: string) => {
-        const pdfUrl = 'http://localhost:3000/' + fileName;
+        const pdfUrl = apiUrl + fileName;
         const anchor = document.createElement('a');
         anchor.href = pdfUrl;
         anchor.download = fileName;
@@ -61,7 +63,7 @@ export default function JobList(searchParams: any) {
                                     </div>
                                     <div key={id} className='grid grid-cols-1 md:grid-cols-12 mx-5 lg:mx-24 lg:my-20'>
                                         <div className=" md:col-span-5 shadow-lg">
-                                            <img className="min-w-full" src={item.profile} alt="" />
+                                            <Image className="min-w-full" src={item.profile} width={100} height={200} alt="" />
                                             <div className="m-2 md:m-12 tracking-wider">
                                                 <h5 className="text-2xl font-bold tracking-tight mb-5"><span className="pb-4"> Contact Info </span></h5>
                                                 <div className="text-base text-gray-500 leading-8">

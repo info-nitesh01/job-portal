@@ -7,10 +7,9 @@ import UserNav from '@/components/UserNav'
 import { Label, Radio, TextInput } from 'flowbite-react'
 import React, { useState } from 'react'
 import { postData } from '../store/api/apiSlice'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 const breadCrumbPages: any = [{ page: "Home", link: "/" }];
-
 
 export default function SignupPage() {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL;
@@ -31,7 +30,6 @@ export default function SignupPage() {
     const [showToast, setshowToast] = useState({ toasttype: "", msg: "" })
     const dispatch = useDispatch<any>();
     const [fileInputName, setfileInputName] = useState("Upload Your CV")
-    const state = useSelector((state) => state);
     const [file, setfile] = useState()
     setTimeout(() => {
         setLoading(false);
@@ -79,7 +77,6 @@ export default function SignupPage() {
                     }
                 }
             })
-
 
         setTimeout(() => {
             setshowToast({ toasttype: "", msg: "" });
